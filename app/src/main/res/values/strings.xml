@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Napkeen</string>
+    <string name="deskripsi_welcomepage">Napkeen membantu anda menemukan tempat makan yang ingin anda kunjungi di sekitar Bandung. Temukan tempat makan favoritmu disini!</string>
+    <string name="selamat_datang_di_napkeen">Selamat Datang di Napkeen!</string>
+    <string name="sudah_memiliki_akun_silahkan">Sudah memiliki akun? silahkan</string>
+    <string name="belum_memiliki_akun">Belum memiliki akun?</string>
+    <string name="masuk">masuk</string>
+    <string name="daftar_disini">Daftar disini</string>
+</resources>
