@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Napkeen.iml" filepath="$PROJECT_DIR$/Napkeen.iml" />
+      <module fileurl="file://D:\Semester 6\RPL Capstone Project\SPRINT1\Napkeen-Project\Napkeen.iml" filepath="D:\Semester 6\RPL Capstone Project\SPRINT1\Napkeen-Project\Napkeen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Napkeen-Project.iml" filepath="$PROJECT_DIR$/Napkeen-Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Semester 6\RPL Capstone Project\SPRINT1\Napkeen-Project\app\app.iml" filepath="D:\Semester 6\RPL Capstone Project\SPRINT1\Napkeen-Project\app\app.iml" />
     </modules>
   </component>
 </project>
