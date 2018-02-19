@@ -24,14 +24,12 @@ public class Home extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    private ListView mDrawerList;
-    private ArrayAdapter<String> mAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        mDrawerList = (ListView)findViewById(R.id.navList);
 
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
