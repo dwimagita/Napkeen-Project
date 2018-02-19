@@ -6,6 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class Home extends AppCompatActivity {
 
@@ -22,11 +24,14 @@ public class Home extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    private ListView mDrawerList;
+    private ArrayAdapter<String> mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        mDrawerList = (ListView)findViewById(R.id.navList);
 
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
@@ -58,5 +63,6 @@ public class Home extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+
     }
 }
