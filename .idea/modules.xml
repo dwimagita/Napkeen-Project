@@ -3,10 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://D:\Semester 6\RPL Capstone Project\SPRINT1\Napkeen-Project\Napkeen.iml" filepath="D:\Semester 6\RPL Capstone Project\SPRINT1\Napkeen-Project\Napkeen.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/Napkeen-Project.iml" filepath="$PROJECT_DIR$/.idea/Napkeen-Project.iml" />
       <module fileurl="file://C:\Users\dwima\AndroidStudioProjects\Napkeen-Project\Napkeen-Project.iml" filepath="C:\Users\dwima\AndroidStudioProjects\Napkeen-Project\Napkeen-Project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\Semester 6\RPL Capstone Project\SPRINT1\Napkeen-Project\app\app.iml" filepath="D:\Semester 6\RPL Capstone Project\SPRINT1\Napkeen-Project\app\app.iml" />
+      <module fileurl="file://D:\Semester 6\RPL Capstone Project\Napkeen\Napkeen-Project\.idea\Napkeen-Project.iml" filepath="D:\Semester 6\RPL Capstone Project\Napkeen\Napkeen-Project\.idea\Napkeen-Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../SPRINT1/Napkeen-Project/app/app.iml" filepath="$PROJECT_DIR$/../../SPRINT1/Napkeen-Project/app/app.iml" />
+      <module fileurl="file://D:\Semester 6\RPL Capstone Project\Napkeen\Napkeen-Project\app\app.iml" filepath="D:\Semester 6\RPL Capstone Project\Napkeen\Napkeen-Project\app\app.iml" />
       <module fileurl="file://C:\Users\dwima\AndroidStudioProjects\Napkeen-Project\app\app.iml" filepath="C:\Users\dwima\AndroidStudioProjects\Napkeen-Project\app\app.iml" />
     </modules>
   </component>
