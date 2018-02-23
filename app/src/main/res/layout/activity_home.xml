@@ -25,9 +25,20 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:background="#FF9052"
-    />
+        >
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_above="@+id/tab_layout"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/napkeenn" />
+<include menu="@menu/menu_search"/>
+
+    </android.support.v7.widget.Toolbar>
     
 
         <android.support.design.widget.TabLayout
