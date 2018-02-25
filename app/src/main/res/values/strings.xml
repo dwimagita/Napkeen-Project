@@ -37,4 +37,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="title_activity_signup">Daftar</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="email_signup">Email</string>
+    <string name="masukdenganfacebook">LANJUTKAN DENGAN FACEBOOK</string>
+    <string name="masukdengangoogle">LANJUTKAN DENGAN GOOGLE</string>
+    <string name="kebijakansignup">Dengan membuat akun, maka anda menyetujui persyaratan kebijakan privasi layanan dan kebijakan konten</string>
 </resources>
