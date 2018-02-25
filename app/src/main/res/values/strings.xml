@@ -11,7 +11,10 @@
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_nama">Nama</string>
+    <string name="prompt_nama_restoran">Nama Restoran</string>
     <string name="prompt_password">Kata sandi</string>
+    <string name="kotarestoran">Kota Restoran</string>
+    <string name="nomorteleponrestoran">Nomor Telepon</string>
     <string name="action_sign_up">Daftar</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
