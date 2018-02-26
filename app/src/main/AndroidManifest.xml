@@ -14,20 +14,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"
-            android:parentActivityName="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.LoginActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoginActivity"/>
         </activity>
         <activity
             android:name=".Home"
@@ -36,11 +30,18 @@
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
-            android:parentActivityName="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.SignupActivity">
+            android:parentActivityName=".SignupActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".SignupActivity"/>
-            ></activity>
+                android:value=".SignupActivity" />
+            >
+        </activity>
+        <activity
+            android:name=".MenuDrawer"
+            android:label="@string/title_activity_menu_drawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>
