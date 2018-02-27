@@ -31,13 +31,56 @@
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/password"
         android:layout_alignRight="@+id/password"
         android:layout_below="@+id/password"
         android:text="@string/login"
         android:layout_marginTop="35dp"
-        android:onClick="Login"/>
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_login"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="20sp"
+        android:text="or"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:id="@+id/option" />
+
+    <ImageView
+        android:id="@+id/fb_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/option"
+        android:src="@drawable/facebook_btn"
+        />
+
+    <ImageView
+        android:id="@+id/gg_btn"
+        android:layout_width="350dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="4dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fb_btn"
+        android:src="@drawable/google_btn" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/gg_btn"
+        android:layout_alignStart="@+id/gg_btn"
+        android:layout_alignTop="@+id/username"
+        android:layout_gravity="center|bottom"
+        android:layout_marginLeft="54dp"
+        android:layout_marginStart="54dp"
+        android:visibility="gone" />
 
 </RelativeLayout>
