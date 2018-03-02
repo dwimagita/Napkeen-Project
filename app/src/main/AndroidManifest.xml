@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -25,9 +26,7 @@
         </activity>
         <activity
             android:name=".Home"
-
-            android:theme="@style/HiddenTitleTheme"
-            />
+            android:theme="@style/HiddenTitleTheme" />
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
@@ -35,12 +34,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".SignupActivity" />
+            <meta-data
+                android:name="com.facebook.sdk.ApplicationId"
+                android:value="164185071055939" />
             >
         </activity>
         <activity
             android:name=".MenuDrawer"
             android:label="@string/title_activity_menu_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TambahRestoran"></activity>
     </application>
 
 </manifest>

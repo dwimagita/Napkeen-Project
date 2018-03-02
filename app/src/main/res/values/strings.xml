@@ -46,4 +46,6 @@
     <string name="masukdenganfacebook">LANJUTKAN DENGAN FACEBOOK</string>
     <string name="masukdengangoogle">LANJUTKAN DENGAN GOOGLE</string>
     <string name="kebijakansignup">Dengan membuat akun, maka anda menyetujui persyaratan kebijakan privasi layanan dan kebijakan konten</string>
+    <string name="facebook_app_id">164185071055939</string>
+
 </resources>
