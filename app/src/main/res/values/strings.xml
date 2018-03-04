@@ -46,4 +46,5 @@
     <string name="masukdenganfacebook">LANJUTKAN DENGAN FACEBOOK</string>
     <string name="masukdengangoogle">LANJUTKAN DENGAN GOOGLE</string>
     <string name="kebijakansignup">Dengan membuat akun, maka anda menyetujui persyaratan kebijakan privasi layanan dan kebijakan konten</string>
+    <string name="title_activity_detail_restoran">detail_restoran</string>
 </resources>

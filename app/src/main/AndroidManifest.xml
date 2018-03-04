@@ -12,22 +12,22 @@
         android:icon="@mipmap/ic_launcher"
         android:label="napkeenn"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:supportsRtl="true">
+
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Home"
+            android:theme="@style/HiddenTitleTheme" />
 
-            android:theme="@style/HiddenTitleTheme"
-            />
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
@@ -35,12 +35,13 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".SignupActivity" />
-            >
         </activity>
+
         <activity
-            android:name=".MenuDrawer"
-            android:label="@string/title_activity_menu_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".detail_restoran"
+            android:theme="@style/AppTheme">
+
+        </activity>
     </application>
 
 </manifest>
