@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.btn_login).setOnClickListener(this);
 
     }
-    private void userLogin() {
+    public void Login(View view) {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
                     finish();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, Home.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {
@@ -85,23 +85,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if (mAuth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, Home.class));
         }
     }
+
+    public void fbLogin(View view) {
+    }
+
+    public void googleLogin(View view) {
+    }
+
 
     @Override
     public void onClick(View view) {
 
-        switch (view.getId()) {
-            case R.id.btn_login:
-                finish();
-                startActivity(new Intent(this, Home.class));
-                break;
-
-            //case R.id.buttonLogin:
-                //userLogin();
-                //break;
-        }
     }
 }
 
