@@ -27,6 +27,7 @@
     <string name="title_activity_home">Home</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_signup">Sign up</string>
     <string name="tab_label1">Restoran</string>
     <string name="tab_label2">Cafe</string>
     <string name="tab_label3">bar</string>
