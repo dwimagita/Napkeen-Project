@@ -24,6 +24,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".LoginActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity" />
+        </activity>
+        <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -36,12 +44,7 @@
                 android:value=".SignupActivity" />
             >
         </activity>
-        <activity
-            android:name=".MenuDrawer"
-            android:label="@string/title_activity_menu_drawer"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>
