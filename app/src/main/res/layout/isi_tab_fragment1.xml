@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:background="?android:selectableItemBackground"
+    android:padding="5dp"
+    android:layout_margin="2dp">
+
+    <ImageView
+        android:id="@+id/gambar_restoran"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/food"
+        android:scaleType="fitXY"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/JudulRestoran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:text="Angkringan Terserah"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/lokasi"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:maxHeight="60dp"
+            android:layout_below="@+id/JudulRestoran"
+            android:text="Sukabirus, Bandung" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lokasi"
+            android:text="Indonesia"
+            />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
