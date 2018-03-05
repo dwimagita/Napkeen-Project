@@ -41,9 +41,6 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
 
-
-
-
     <string name="title_activity_signup">Daftar</string>
     <string name="action_sign_in">Sign In</string>
     <string name="email_signup">Email</string>
