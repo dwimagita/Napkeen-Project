@@ -13,7 +13,7 @@
             android:layout_width = "match_parent"
             android:layout_height="1dp"/>
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_nearby"
             android:icon="@drawable/ic_location"
             android:title="Nearby" />
         <View android:background="#ffffff"

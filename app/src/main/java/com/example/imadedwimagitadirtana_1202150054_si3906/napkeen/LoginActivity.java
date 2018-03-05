@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void googleLogin(View view) {
-    }=
+    }
 
 
     @Override
