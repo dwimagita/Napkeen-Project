@@ -8,12 +8,14 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="Home" />
+            android:title="Home"
+
+            />
         <View android:background="#000000"
             android:layout_width = "match_parent"
             android:layout_height="1dp"/>
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_nearby"
             android:icon="@drawable/ic_location"
             android:title="Nearby" />
         <View android:background="#000000"
