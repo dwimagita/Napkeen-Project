@@ -30,8 +30,8 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
+                android:value=".MainActivity" /> </activity>
+        
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
@@ -43,8 +43,8 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".SignupActivity" />
-            >
-        </activity>
+            </activity>
+        
         <activity android:name=".ResetPassword"
             android:parentActivityName=".LoginActivity"
             >
@@ -53,14 +53,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
-                android:value=".SignupActivity" />
-        </activity>
+               
         <activity
             android:name=".detail_restoran"
             android:theme="@style/AppTheme">
 
         </activity>
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".TambahRestoran"></activity>
     </application>
 
 </manifest>
