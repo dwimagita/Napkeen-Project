@@ -27,10 +27,10 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" /> </activity>
+                android:value=".LoginActivity" /> </activity>
         
         <activity
             android:name=".Home"
@@ -59,7 +59,12 @@
             android:theme="@style/AppTheme">
 
         </activity>
-        <activity android:name=".TambahRestoran"></activity>
+        <activity android:name=".TambahRestoran" android:parentActivityName=".Home" >
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
     </application>
 
 </manifest>

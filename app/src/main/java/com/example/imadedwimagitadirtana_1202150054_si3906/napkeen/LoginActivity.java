@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
 
         inputEmail = (EditText) findViewById(R.id.email);
+
         inputPassword = (EditText) findViewById(R.id.password);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
@@ -64,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = inputEmail.getText().toString();
+
                 final String password = inputPassword.getText().toString();
 
                 if (TextUtils.isEmpty(email)) {
