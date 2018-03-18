@@ -54,6 +54,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener authListener;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +65,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         toolbar.setLogo(R.drawable.napkeennlogoforhome);
+
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -122,6 +124,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+
 
     }
 
@@ -194,10 +198,30 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     //sign out method
     public void signOut() {
         mAuth.signOut();
-        Intent login = new Intent(Home.this, LoginActivity.class);
-        startActivity(login);
-
+       // Intent login = new Intent(Home.this, MainActivity.class);
+       // startActivity(login);
     }
+        @Override
+        protected void onResume() {
+            super.onResume();
+
+        }
+
+        @Override
+        public void onStart() {
+            super.onStart();
+            mAuth.addAuthStateListener(authListener);
+        }
+
+        @Override
+        public void onStop() {
+            super.onStop();
+            if (authListener != null) {
+                mAuth.removeAuthStateListener(authListener);
+            }
+        }
+
+
 }
 
 
