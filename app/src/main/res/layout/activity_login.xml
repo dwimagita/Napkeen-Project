@@ -10,14 +10,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.LoginActivity">
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/napkeenn"
+        android:id="@+id/napkeenlogo" />
+
     <EditText
         android:id="@+id/email"
-        android:layout_width="match_parent"
+        android:layout_width="350sp"
+
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:inputType="text"
-        android:hint="@string/email" />
+        android:hint="Email"
+        android:layout_below="@id/napkeenlogo"
+        />
+
 
     <EditText
         android:id="@+id/password"
@@ -41,50 +52,95 @@
         android:onClick="Login"
         />
 
+
     <TextView
+        android:id="@+id/textView6"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_login"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="20dp"
-        android:textSize="20sp"
-        android:text="or"
+        android:layout_below="@+id/btn_login"
+        android:text="Belum Punya Akun?"
         android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:id="@+id/option" />
-
-    <ImageView
-        android:id="@+id/fb_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/option"
-        android:src="@drawable/facebook_btn"
-        android:onClick="fbLogin"
         />
 
-    <ImageView
+    <TextView
+        android:id="@+id/daftarlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="menujusignup"
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:text="Daftar"
+        />
+
+
+    <View
+        android:layout_width="120dp"
+        android:layout_height="1dp"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignLeft="@+id/sign_up_button"
+        android:layout_alignStart="@+id/sign_up_button"
+        android:layout_marginLeft="6dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/garisataukiri"
+        android:background="@android:color/darker_gray" />
+
+    <View
+        android:id="@+id/garisataukanan"
+        android:layout_width="120dp"
+        android:layout_height="1dp"
+        android:layout_above="@+id/garisataukiri"
+        android:layout_alignEnd="@+id/btn_login"
+        android:layout_alignRight="@+id/btn_login"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_reset_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Atau" />
+
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:ems="25"
+        android:text="@string/kebijakansignup"
+        android:textAlignment="center"
+        android:textSize="8sp" />
+
+    <Button
+        android:id="@+id/btn_reset_password"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dip"
+        android:background="@null"
+        android:text="Lupa Password?"
+        android:textAllCaps="false"
+        android:layout_below="@id/textView6"
+        android:textColor="@color/colorAccent" />
+    //com.google.android.gms.common.SignInButton
+
         android:id="@+id/gg_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/fb_btn"
-        android:src="@drawable/google_btn"
-        android:onClick="googleLogin"/>
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/option" />
+
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignLeft="@+id/gg_btn"
-        android:layout_alignStart="@+id/gg_btn"
-        android:layout_alignTop="@+id/username"
+        android:layout_below="@id/textView8"
         android:layout_gravity="center|bottom"
-        android:layout_marginLeft="54dp"
-        android:layout_marginStart="54dp"
+
         android:visibility="gone" />
 
 </RelativeLayout>

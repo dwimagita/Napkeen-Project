@@ -27,10 +27,15 @@ import android.widget.ListView;
 import android.content.Intent;
 import android.widget.TextView;
 
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
 
 
     /**
@@ -46,7 +51,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener authListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +66,22 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         toolbar.setLogo(R.drawable.napkeennlogoforhome);
 
 
+        mAuth = FirebaseAuth.getInstance();
+        //get current user
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+        authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(Home.this, LoginActivity.class));
+                    finish();
+                }
+            }
+        };
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_label1));
@@ -139,9 +160,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 // add navigation drawer item onclick method here
                 break;
             case R.id.nav_Keluar:
-                //Do some thing here
-                // add navigation drawer item onclick method here
+
+                signOut();
                 break;
+            default: break;
         }
         return false;
     }
@@ -167,6 +189,14 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         return super.onCreateOptionsMenu(menu);
     }
 
+
+    //sign out method
+    public void signOut() {
+        mAuth.signOut();
+        Intent login = new Intent(Home.this, LoginActivity.class);
+        startActivity(login);
+
+    }
 }
 
 
