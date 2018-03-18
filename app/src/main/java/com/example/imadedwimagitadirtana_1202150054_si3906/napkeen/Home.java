@@ -84,10 +84,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         };
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_label1));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_label2));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_label3));
-        tabLayout.addTab(tabLayout.newTab().setText("Dessert"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_restaurant).setText(R.string.tab_label1));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_cafe).setText(R.string.tab_label2));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_bar).setText(R.string.tab_label3));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_cake).setText("Dessert"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
@@ -153,7 +153,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 // add navigation drawer item onclick method here
                 break;
             case R.id.nav_tambah_restoran:
-
+                Intent tmbhrestoran = new Intent(Home.this, TambahRestoran.class);
+                startActivity(tmbhrestoran);
                 break;
             case R.id.nav_pengaturan:
                 //Do some thing here
