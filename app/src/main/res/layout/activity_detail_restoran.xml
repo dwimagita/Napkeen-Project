@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/foto"
@@ -8,12 +9,15 @@
     android:layout_height="match_parent"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.detail_restoran">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF9052">
 
-    </ScrollView>
+
+
+    </android.support.v7.widget.Toolbar>
 
 
     <TextView
@@ -141,15 +145,13 @@
         android:text="Foto" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageView5"
+        android:id="@+id/konten"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
         android:layout_alignLeft="@+id/textView23"
-        android:layout_alignRight="@+id/imageView5"
         android:layout_alignStart="@+id/textView23"
         android:layout_below="@+id/textView23"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="13dp"
         app:srcCompat="@drawable/makanan" />
 
 

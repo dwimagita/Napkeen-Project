@@ -60,8 +60,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         toolbar.setLogo(R.drawable.napkeennlogoforhome);
 
 
-
-
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_label1));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_label2));
