@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -28,10 +29,8 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:parentActivityName=".LoginActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoginActivity" />
-        </activity>
+            </activity>
+        
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
@@ -43,9 +42,28 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".SignupActivity" />
+            </activity>
+        
+        <activity android:name=".ResetPassword"
+            android:parentActivityName=".LoginActivity"
             >
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity" />
         </activity>
-        <activity android:name=".Main2Activity"></activity>
+               
+        <activity
+            android:name=".detail_restoran"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity android:name=".TambahRestoran" android:parentActivityName=".Home" >
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
     </application>
 
 </manifest>
