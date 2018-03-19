@@ -2,6 +2,7 @@ package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
 
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -26,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.content.Intent;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -138,9 +141,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
-                Intent home = new Intent(Home.this, Home.class);
-                startActivity(home);
-                break;
+                Intent homeIntent = new Intent(this, Home.class);
+                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
+        break;
             case R.id.nav_nearby:
 
                 break;
@@ -165,12 +169,21 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 // add navigation drawer item onclick method here
                 break;
             case R.id.nav_Keluar:
+                new AlertDialog.Builder(this)
+                        .setTitle("Keluar")
+                        .setMessage("Anda yakin ingin keluar?")
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
-                signOut();
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                signOut();
+                            }})
+                        .setNegativeButton(android.R.string.no, null).show();
+
                 break;
             default: break;
         }
-        return false;
+        return (super.onOptionsItemSelected(item));
     }
 
     @Override
