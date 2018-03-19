@@ -20,10 +20,9 @@
     <EditText
         android:id="@+id/email"
         android:layout_width="350sp"
-
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:inputType="text"
         android:hint="Email"
         android:layout_below="@id/napkeenlogo"
@@ -36,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/email"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:inputType="textPassword"
         android:hint="@string/password" />
 
@@ -48,8 +47,7 @@
         android:layout_alignRight="@+id/password"
         android:layout_below="@+id/password"
         android:text="@string/login"
-        android:layout_marginTop="35dp"
-        android:onClick="Login"
+        android:layout_marginTop="15dp"
         />
 
 
@@ -58,20 +56,26 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_login"
-        android:text="Belum Punya Akun?"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_alignBaseline="@+id/daftarlogin"
+        android:layout_alignBottom="@+id/daftarlogin"
+        android:layout_alignLeft="@+id/napkeenlogo"
+        android:layout_alignStart="@+id/napkeenlogo"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:text="Belum Punya Akun?" />
 
     <TextView
         android:id="@+id/daftarlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="15dp"
+        android:layout_toEndOf="@+id/textView6"
+        android:layout_toRightOf="@+id/textView6"
         android:onClick="menujusignup"
-        android:layout_below="@+id/textView6"
-        android:layout_centerHorizontal="true"
         android:text="Daftar"
-        />
+        android:textColor="@color/colorAccent"/>
 
 
     <View
@@ -119,11 +123,13 @@
         android:id="@+id/btn_reset_password"
         android:layout_width="fill_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="20dip"
+        android:layout_alignEnd="@+id/email"
+        android:layout_alignRight="@+id/email"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="14dp"
         android:background="@null"
         android:text="Lupa Password?"
         android:textAllCaps="false"
-        android:layout_below="@id/textView6"
         android:textColor="@color/colorAccent" />
     //com.google.android.gms.common.SignInButton
 

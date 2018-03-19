@@ -47,6 +47,7 @@
         android:layout_below="@id/passwordforsignup"
         android:background="@color/tombolsignup"
         android:text="@string/action_sign_up"
+        android:layout_marginTop="15dp"
         android:textColor="@color/putih"
         android:textStyle="bold" />
 
@@ -55,17 +56,24 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3"
         android:layout_below="@+id/sign_up_button"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:text="Sudah punya akun ? " />
 
     <TextView
         android:id="@+id/masukdidaftar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView6"
-        android:layout_centerHorizontal="true"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/textView6"
+        android:layout_toRightOf="@+id/textView6"
         android:onClick="menujulogin"
+        android:textColor="@color/colorAccent"
         android:text="Masuk" />
 
 
