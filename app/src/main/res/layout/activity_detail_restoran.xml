@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/foto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.detail_restoran">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FF9052">
-
-
-
-    </android.support.v7.widget.Toolbar>
-
 
     <TextView
         android:id="@+id/textView16"
@@ -51,6 +37,8 @@
         android:layout_alignBottom="@+id/textView19"
         android:layout_alignLeft="@+id/textView16"
         android:layout_alignStart="@+id/textView16"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
         android:text="Buka"
         android:textColor="@android:color/holo_green_light"
         android:textStyle="bold" />
@@ -59,21 +47,24 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView16"
-        android:layout_alignRight="@+id/textView16"
         android:layout_below="@+id/textView17"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
         android:layout_marginTop="11dp"
+        android:layout_toEndOf="@+id/textView18"
+        android:layout_toRightOf="@+id/textView18"
         android:text="9 Pagi - 10 Malam" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView18"
+        android:layout_alignStart="@+id/textView18"
         android:layout_below="@+id/textView18"
         android:layout_marginTop="22dp"
-        android:layout_toLeftOf="@+id/textView17"
-        android:layout_toStartOf="@+id/textView17"
-        app:srcCompat="@drawable/ic_call_black_24dp" />
+        app:srcCompat="@drawable/ic_call_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -81,7 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView4"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/ic_menu_camera" />
+        app:srcCompat="@drawable/ic_menu_camera"
+        tools:ignore="VectorDrawableCompat" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -90,69 +82,7 @@
         android:layout_alignEnd="@+id/textView19"
         android:layout_alignRight="@+id/textView19"
         android:layout_alignTop="@+id/imageView5"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        app:srcCompat="@drawable/ic_star" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_alignStart="@+id/imageView4"
-        android:layout_below="@+id/imageView4"
-        android:layout_marginTop="13dp"
-        android:text="Telepon"
-        android:textSize="10sp" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView20"
-        android:layout_alignBottom="@+id/textView20"
-        android:layout_centerHorizontal="true"
-        android:text="Tambah Foto"
-        android:textSize="10sp" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView21"
-        android:layout_alignBottom="@+id/textView21"
-        android:layout_alignEnd="@+id/imageView7"
-        android:layout_alignRight="@+id/imageView7"
-        android:text="Arsipkan"
-        android:textSize="10sp" />
-
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView20"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ratingBar"
-        android:layout_marginTop="16dp"
-        android:layout_toLeftOf="@+id/ratingBar"
-        android:layout_toStartOf="@+id/ratingBar"
-        android:text="Foto" />
-
-    <ImageView
-        android:id="@+id/konten"
-        android:layout_width="100dp"
-        android:layout_height="200dp"
-        android:layout_alignLeft="@+id/textView23"
-        android:layout_alignStart="@+id/textView23"
-        android:layout_below="@+id/textView23"
-        android:layout_marginTop="13dp"
-        app:srcCompat="@drawable/makanan" />
-
+        app:srcCompat="@drawable/ic_star"
+        tools:ignore="VectorDrawableCompat" />
 
 </RelativeLayout>
