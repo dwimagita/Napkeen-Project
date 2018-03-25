@@ -4,7 +4,12 @@ package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
@@ -19,6 +24,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,7 +40,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -57,7 +63,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener authListener;
 
+    private DrawerLayout mDrawerLayout;
 
+    public TextView showEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,21 +77,23 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         getSupportActionBar().setTitle(null);
         toolbar.setLogo(R.drawable.napkeennlogoforhome);
 
-
-
         mAuth = FirebaseAuth.getInstance();
-        //get current user
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
+        FirebaseUser user = mAuth.getCurrentUser();
+        String email = user.getEmail();
+        showEmail = findViewById(R.id.emailnavbar);
+       // showEmail.setText(email);
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                //get current user
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user == null) {
                     // user auth state is changed - user is null
                     // launch login activity
                     startActivity(new Intent(Home.this, LoginActivity.class));
                     finish();
+                }else{
+
                 }
             }
         };
@@ -129,6 +139,13 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         toggle.syncState();
 
 
+        if(isOnline()){
+        }else{
+            Toast.makeText(Home.this, "You are not connected to Internet", Toast.LENGTH_SHORT).show();
+        }
+
+        mAuth = FirebaseAuth.getInstance();
+        final FirebaseUser theUser = mAuth.getCurrentUser();
 
     }
 
@@ -141,32 +158,35 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
-                Intent homeIntent = new Intent(this, Home.class);
-                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(homeIntent);
+
+                mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+                mDrawerLayout.closeDrawers();;
         break;
             case R.id.nav_nearby:
-
+                mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+                mDrawerLayout.closeDrawers();;
                 break;
             case R.id.nav_tempat_terbaik:
-                //Do some thing here
-                // add navigation drawer item onclick method here
+                mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+                mDrawerLayout.closeDrawers();;
                 break;
             case R.id.nav_bantuan:
-                //Do some thing here
-                // add navigation drawer item onclick method here
+                mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+                mDrawerLayout.closeDrawers();;
                 break;
             case R.id.nav_tentang:
-                //Do some thing here
-                // add navigation drawer item onclick method here
+                mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+                mDrawerLayout.closeDrawers();;
                 break;
             case R.id.nav_tambah_restoran:
                 Intent tmbhrestoran = new Intent(Home.this, TambahRestoran.class);
+                mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+                mDrawerLayout.closeDrawers();;
                 startActivity(tmbhrestoran);
                 break;
             case R.id.nav_pengaturan:
-                //Do some thing here
-                // add navigation drawer item onclick method here
+                mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+                mDrawerLayout.closeDrawers();;
                 break;
             case R.id.nav_Keluar:
                 new AlertDialog.Builder(this)
@@ -211,8 +231,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     //sign out method
     public void signOut() {
         mAuth.signOut();
-       // Intent login = new Intent(Home.this, MainActivity.class);
-       // startActivity(login);
+
     }
         @Override
         protected void onResume() {
@@ -233,6 +252,15 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 mAuth.removeAuthStateListener(authListener);
             }
         }
+    public boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
 }
