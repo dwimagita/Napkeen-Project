@@ -34,7 +34,9 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="tab_label1">Restoran</string>
     <string name="tab_label2">Cafe</string>
-    <string name="tab_label3">bar</string>
+    <string name="tab_label3">Bar</string>
+    <string name="label4">Dessert</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -45,6 +47,8 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="email">Email</string>
+
 
 
     <string name="title_activity_signup">Daftar</string>

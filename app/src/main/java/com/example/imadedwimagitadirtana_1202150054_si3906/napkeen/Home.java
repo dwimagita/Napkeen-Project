@@ -77,6 +77,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         getSupportActionBar().setTitle(null);
         toolbar.setLogo(R.drawable.napkeennlogoforhome);
 
+
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String email = user.getEmail();
