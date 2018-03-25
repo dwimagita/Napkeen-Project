@@ -152,7 +152,7 @@
         tools:layout_editor_absoluteY="76dp" />
 
     <EditText
-        android:id="@+id/kotarestoran"
+        android:id="@+id/telponrestoran"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView13"

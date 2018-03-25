@@ -1,10 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.TambahRestoran">
+    android:orientation="vertical"
+    tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.SignupActivity"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:backgroundTint="@color/colorPrimary"
+    android:gravity="center_horizontal"        >
+
+    <EditText
+        android:id="@+id/EdtTextnamarestoran"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textViewnamarestoran"
+        android:fontFamily="casual"
+        android:hint="@string/prompt_nama_restoran"
+        android:inputType="text"
+        android:singleLine="true"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="21dp" />
+
+    <EditText
+        android:id="@+id/EdtTextkotarestoran"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textViewkotarestoran"
+        android:fontFamily="casual"
+        android:hint="@string/kotarestoran"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/email_sign_in_button"
+        style="?android:textAppearanceSmall"
+        android:layout_width="300dp"
+        android:layout_height="34dp"
+        android:layout_above="@+id/kebijakandesc"
+        android:layout_centerHorizontal="true"
+        android:background="@color/tombolsignup"
+        android:fontFamily="casual"
+        android:text="@string/action_sign_up"
+        android:textColor="@color/putih"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+
+    <TextView
+        android:id="@+id/kebijakandesc"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:ems="25"
+        android:fontFamily="casual"
+        android:text="@string/kebijakansignup"
+        android:textAlignment="center"
+        android:textSize="8sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="446dp" />
+
+    <TextView
+        android:id="@+id/textViewnamarestoran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:fontFamily="casual"
+        android:text="Nama Restoran"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="5dp" />
+
+    <TextView
+        android:id="@+id/textViewkotarestoran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/EdtTextnamarestoran"
+        android:fontFamily="casual"
+        android:text="Kota"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <TextView
+        android:id="@+id/textViewPemilikRestoran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/kotarestoran"
+        android:layout_alignStart="@+id/kotarestoran"
+        android:layout_below="@+id/kotarestoran"
+        android:fontFamily="casual"
+        android:text="Apakah anda pemilik restoran ?"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="243dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewPemilikRestoran"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        tools:layout_editor_absoluteX="69dp"
+        >
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView9"
+            android:layout_alignRight="@+id/textView9"
+            android:layout_below="@+id/radioGroup"
+            android:layout_marginEnd="21dp"
+            android:layout_marginRight="21dp"
+            android:fontFamily="casual"
+            android:text="Saya pemilik Restoran"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView12"
+            android:layout_alignStart="@+id/textView12"
+            android:layout_alignTop="@+id/radioGroup"
+            android:fontFamily="casual"
+            android:text="Saya bukan pemilik Restoran" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewnomortelepon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EdtTextkotarestoran"
+        android:fontFamily="casual"
+        android:text="Nomor Telepon"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <EditText
+        android:id="@+id/kotarestoran"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="casual"
+        android:hint="@string/nomorteleponrestoran"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_below="@id/textViewnomortelepon"
+        />
 
 
 </RelativeLayout>

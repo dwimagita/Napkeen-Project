@@ -50,11 +50,6 @@
 
 
 </RelativeLayout>
-
-
-
-
-
     <android.support.design.widget.NavigationView
 
         android:id="@+id/navigation"

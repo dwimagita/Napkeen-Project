@@ -2,103 +2,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/colorPrimary"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:backgroundTint="@color/colorPrimary"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.SignupActivity">
+
+    <!-- Login progress -->
 
 
     <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="200dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/napkeenn"
-        android:id="@+id/imageView3" />
-
-    <ScrollView
-        android:id="@+id/login_form"
-        android:layout_width="wrap_content"
+        android:src="@drawable/napkeenn" />
+    //EditText
+        android:id="@+id/nama_sign_up"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        >
+        android:layout_marginTop="15dp"
+        android:hint="Nama"
 
-        <LinearLayout
-            android:id="@+id/email_login_form"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+         />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:hint="@string/email_signup"
-                android:inputType="textEmailAddress" />
+    <EditText
+        android:id="@+id/emailforsignup"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
 
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:hint="@string/prompt_nama"
-                android:inputType="text"
-                android:maxLines="1"
-                android:singleLine="true" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView3"
+        android:hint="Email"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true" />
 
-            <EditText
-                    android:id="@+id/password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_password"
-                    android:inputType="textPassword" />
+    <EditText
+        android:id="@+id/passwordforsignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
 
-            <Button
-                android:id="@+id/email_sign_in_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/action_sign_up"
-                android:textColor="@color/putih"
-                android:background="@color/tombolsignup"
-                android:textStyle="bold" />
+        android:layout_below="@id/emailforsignup"
+        android:hint="@string/prompt_password"
+        android:inputType="textPassword" />
 
-        </LinearLayout>
-    </ScrollView>
+
+    <Button
+        android:id="@+id/sign_up_button"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+
+        android:layout_below="@id/passwordforsignup"
+        android:background="@color/tombolsignup"
+        android:text="@string/action_sign_up"
+        android:textColor="@color/putih"
+        android:textStyle="bold" />
+
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView3"
-        android:layout_alignStart="@+id/imageView3"
-        android:layout_below="@+id/login_form"
+        android:layout_below="@+id/sign_up_button"
+        android:layout_centerHorizontal="true"
         android:text="Sudah punya akun ? " />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/masukdidaftar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageView3"
-        android:layout_alignRight="@+id/imageView3"
-        android:layout_below="@+id/login_form"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="menujulogin"
         android:text="Masuk" />
 
+
     <View
+        android:id="@+id/garisataukiri"
         android:layout_width="120dp"
         android:layout_height="1dp"
         android:layout_alignBottom="@+id/textView8"
-        android:layout_alignLeft="@+id/login_form"
-        android:layout_alignStart="@+id/login_form"
-        android:layout_marginLeft="6dp"
+        android:layout_alignLeft="@+id/sign_up_button"
+        android:layout_alignStart="@+id/sign_up_button"
         android:layout_marginBottom="8dp"
-        android:id="@+id/garisataukiri"
+        android:layout_marginLeft="6dp"
         android:background="@android:color/darker_gray" />
 
     <View
@@ -106,28 +101,28 @@
         android:layout_width="120dp"
         android:layout_height="1dp"
         android:layout_above="@+id/garisataukiri"
-        android:layout_alignEnd="@+id/login_form"
-        android:layout_alignRight="@+id/login_form"
+        android:layout_alignEnd="@+id/sign_up_button"
+        android:layout_alignRight="@+id/sign_up_button"
         android:background="@android:color/darker_gray" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView6"
+        android:layout_below="@+id/masukdidaftar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:text="Atau" />
 
 
     <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/garisataukanan"
-        android:layout_alignRight="@+id/garisataukanan"
-        android:layout_below="@+id/garisataukiri"
-        android:layout_marginTop="18dp" />
+
+    android:id="@+id/sign_in_button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/textView8"
+        />
 
 
     <TextView
@@ -141,5 +136,13 @@
         android:textAlignment="center"
         android:textSize="8sp" />
 
-
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
 </RelativeLayout>
