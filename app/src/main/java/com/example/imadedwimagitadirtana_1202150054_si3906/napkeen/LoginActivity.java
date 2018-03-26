@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private EditText inputEmail, inputPassword;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
+
     private Button  btnLogin, btnReset;
     private GoogleSignInClient mGoogleSignInClient;
 

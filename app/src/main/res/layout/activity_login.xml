@@ -22,7 +22,7 @@
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:inputType="text"
         android:hint="Email"
         android:layout_below="@id/napkeenlogo"
@@ -48,6 +48,7 @@
         android:layout_below="@+id/password"
         android:text="@string/login"
         android:layout_marginTop="15dp"
+
         android:onClick="Login"
         />
     <TextView
@@ -68,6 +69,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_below="@+id/btn_reset_password"
         android:text="Belum Punya Akun?"
         android:layout_marginTop="5dp"
@@ -78,6 +80,7 @@
         android:id="@+id/daftarlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_below="@+id/textView6"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
@@ -128,6 +131,7 @@
         android:text="@string/kebijakansignup"
         android:textAlignment="center"
         android:textSize="8sp" />
+
 
 
     <com.google.android.gms.common.SignInButton
