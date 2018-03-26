@@ -48,40 +48,53 @@
         android:layout_below="@+id/password"
         android:text="@string/login"
         android:layout_marginTop="15dp"
-        />
 
+        android:onClick="Login"
+        />
+    <TextView
+        android:id="@+id/btn_reset_password"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:text="Lupa Password?"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_below="@id/btn_login"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorAccent"
+        android:onClick="menujuresetpassword"
+        />
 
     <TextView
         android:id="@+id/textView6"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/daftarlogin"
-        android:layout_alignBottom="@+id/daftarlogin"
-        android:layout_alignLeft="@+id/napkeenlogo"
-        android:layout_alignStart="@+id/napkeenlogo"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:text="Belum Punya Akun?" />
+
+        android:layout_below="@+id/btn_reset_password"
+        android:text="Belum Punya Akun?"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        />
 
     <TextView
         android:id="@+id/daftarlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_login"
-        android:layout_marginTop="22dp"
-        android:layout_marginLeft="15dp"
-        android:layout_toEndOf="@+id/textView6"
-        android:layout_toRightOf="@+id/textView6"
+
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
         android:onClick="menujusignup"
         android:text="Daftar"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
 
     <View
         android:layout_width="120dp"
         android:layout_height="1dp"
-        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignBottom="@+id/textatau"
         android:layout_alignLeft="@+id/sign_up_button"
         android:layout_alignStart="@+id/sign_up_button"
         android:layout_marginLeft="6dp"
@@ -99,10 +112,10 @@
         android:background="@android:color/darker_gray" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textatau"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_reset_password"
+        android:layout_below="@+id/daftarlogin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:text="Atau" />
@@ -119,25 +132,18 @@
         android:textAlignment="center"
         android:textSize="8sp" />
 
-    <Button
-        android:id="@+id/btn_reset_password"
-        android:layout_width="fill_parent"
-        android:layout_height="20dp"
-        android:layout_alignEnd="@+id/email"
-        android:layout_alignRight="@+id/email"
-        android:layout_below="@+id/textView6"
-        android:layout_marginTop="14dp"
-        android:background="@null"
-        android:text="Lupa Password?"
-        android:textAllCaps="false"
-        android:textColor="@color/colorAccent" />
-    //com.google.android.gms.common.SignInButton
 
-        android:id="@+id/gg_btn"
+
+    <com.google.android.gms.common.SignInButton
+
+        android:id="@+id/google_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/option" />
+        android:layout_below="@+id/textatau"
+        />
+
+
 
 
     <ProgressBar

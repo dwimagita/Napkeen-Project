@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Napkeen</string>
+
+    <!-- Strings related to Main Activity -->
     <string name="deskripsi_welcomepage">Napkeen membantu anda menemukan tempat makan yang ingin anda kunjungi di sekitar Bandung. Temukan tempat makan favoritmu disini!</string>
     <string name="selamat_datang_di_napkeen">Selamat Datang di Napkeen!</string>
-    <string name="sudah_memiliki_akun_silahkan">Sudah memiliki akun? silahkan</string>
+    <string name="sudah_memiliki_akun">Sudah memiliki akun?</string>
     <string name="belum_memiliki_akun">Belum memiliki akun?</string>
     <string name="masuk">masuk</string>
     <string name="daftar_disini">Daftar disini</string>
+
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -31,7 +34,9 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="tab_label1">Restoran</string>
     <string name="tab_label2">Cafe</string>
-    <string name="tab_label3">bar</string>
+    <string name="tab_label3">Bar</string>
+    <string name="label4">Dessert</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -42,6 +47,8 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="email">Email</string>
+
 
 
     <string name="title_activity_signup">Daftar</string>
