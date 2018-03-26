@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFD185"
+    android:orientation="vertical"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.MainActivity">
 
 
@@ -30,7 +30,7 @@
         android:layout_alignBottom="@+id/imageView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="39dp"
+        android:layout_marginBottom="42dp"
         android:adjustViewBounds="true"
         android:background="#99FFFFFF"
         android:cropToPadding="false"
@@ -48,7 +48,6 @@
         android:text="@string/deskripsi_welcomepage"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@android:color/background_dark"
         android:textSize="18sp" />
 
 
@@ -58,64 +57,60 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView2"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="11dp"
         android:text="@string/selamat_datang_di_napkeen"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/background_dark" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
         android:layout_marginTop="36dp"
-        android:text="@string/sudah_memiliki_akun_silahkan"
-        android:textColor="@android:color/background_dark" />
+        android:text="@string/sudah_memiliki_akun" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="15dp"
-        android:text="@string/belum_memiliki_akun"
-        android:textColor="@android:color/background_dark" />
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:text="@string/belum_memiliki_akun" />
 
-    <TextView
+    <Button
         android:id="@+id/masuk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_alignBaseline="@+id/daftar"
+        android:layout_alignBottom="@+id/daftar"
+        android:layout_alignEnd="@id/textView4"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
         android:onClick="launchLoginActivity"
-        android:text="@string/masuk"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textStyle="bold" />
+        android:text="@string/masuk" />
 
-    <TextView
+    <Button
         android:id="@+id/daftar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView5"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_toEndOf="@+id/textView5"
-        android:layout_toRightOf="@+id/textView5"
-        android:text="@string/daftar_disini"
+        android:layout_alignEnd="@id/textView5"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="15dp"
+
         android:onClick="launchSignupActivity"
-        android:textColor="@android:color/holo_blue_light"
-        android:textStyle="bold" />
+        android:text="@string/daftar_disini" />
+
 
 
 </RelativeLayout>
