@@ -31,11 +31,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.OptionalPendingResult;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,7 +55,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
 
-public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
 
 
 
@@ -66,6 +78,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private DrawerLayout mDrawerLayout;
 
     public TextView showEmail;
+    private GoogleApiClient googleApiClient;
+
+    private ImageView photoImageView;
+    private TextView nameTextView;
+    private TextView emailTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,26 +96,42 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         toolbar.setLogo(R.drawable.napkeennlogoforhome);
 
 
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        String email = user.getEmail();
-        showEmail = findViewById(R.id.emailnavbar);
-       // showEmail.setText(email);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+       googleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this, this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+
+
+       mAuth = FirebaseAuth.getInstance();
+    //    FirebaseUser user = mAuth.getCurrentUser();
+//        String email = user.getEmail();
+  //      showEmail = findViewById(R.id.emailnavbar);
+    //    showEmail.setText(email);
+       final GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(Home.this);
+
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 //get current user
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    startActivity(new Intent(Home.this, LoginActivity.class));
-                    finish();
-                }else{
 
-                }
-            }
-        };
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (account == null) {
+                    //logOutt();
+                } else if
+                    (user == null) {
+                        // user auth state is changed - user is null
+                        // launch login activity
+                       // startActivity(new Intent(Home.this, LoginActivity.class));
+                       // finish();
+                    }else{
+
+                    }
+
+            }};
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_restaurant).setText(R.string.tab_label1));
@@ -134,10 +168,15 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        photoImageView = (ImageView) findViewById(R.id.imageUser);
+        nameTextView = (TextView) findViewById(R.id.NamaUserDrawer);
+        emailTextView = (TextView) findViewById(R.id.emailnavbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+
 
 
         if(isOnline()){
@@ -146,13 +185,13 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         }
 
         mAuth = FirebaseAuth.getInstance();
-        final FirebaseUser theUser = mAuth.getCurrentUser();
 
     }
 
     private void setNavigationViewListener() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -197,7 +236,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                signOut();
+                                 logOutt();
                             }})
                         .setNegativeButton(android.R.string.no, null).show();
 
@@ -205,6 +244,19 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             default: break;
         }
         return (super.onOptionsItemSelected(item));
+    }
+
+    private void logOutt() {
+        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
+            @Override
+            public void onResult(@NonNull Status status) {
+                if (status.isSuccess()) {
+                    goLogInScreen();
+                } else {
+                    //   Toast.makeText(getApplicationContext(), R.string.not_close_session, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
@@ -232,6 +284,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     //sign out method
     public void signOut() {
         mAuth.signOut();
+        startActivity(new Intent(Home.this, LoginActivity.class));
+        finish();
 
     }
         @Override
@@ -244,6 +298,18 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         public void onStart() {
             super.onStart();
             mAuth.addAuthStateListener(authListener);
+            OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(googleApiClient);
+            if (opr.isDone()) {
+                GoogleSignInResult result = opr.get();
+                handleSignInResult(result);
+            } else {
+                opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
+                    @Override
+                    public void onResult(@NonNull GoogleSignInResult googleSignInResult) {
+                        handleSignInResult(googleSignInResult);
+                    }
+                });
+            }
         }
 
         @Override
@@ -262,8 +328,30 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             return false;
         }
     }
+    private void goLogInScreen() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
 
+    private void handleSignInResult(GoogleSignInResult result) {
+        if (result.isSuccess()) {
+
+            GoogleSignInAccount account = result.getSignInAccount();
+
+           // nameTextView.setText(account.getDisplayName());
+  //          emailTextView.setText(account.getEmail());
+
+    //        Glide.with(this).load(account.getPhotoUrl()).into(photoImageView);
+
+        } else {
+            goLogInScreen();
+        }
+    }
 }
 
 

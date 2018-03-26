@@ -4,28 +4,32 @@
     "firebase_url": "https://napkeen-project1.firebaseio.com",
     "project_id": "napkeen-project1",
     "storage_bucket": "napkeen-project1.appspot.com"
- 
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:464571935371:android:e89c4e0d6398264b",
-
         "android_client_info": {
           "package_name": "com.example.imadedwimagitadirtana_1202150054_si3906.napkeen"
         }
       },
       "oauth_client": [
         {
+          "client_id": "464571935371-9cnolh1pgqkssse9gesh07v7i2ofetss.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.imadedwimagitadirtana_1202150054_si3906.napkeen",
+            "certificate_hash": "4c2d5466dda46cb0e23e6a50f945259ad298a255"
+          }
+        },
+        {
           "client_id": "464571935371-664rettsfhgk7ekqff7k2oaa6buvt6ag.apps.googleusercontent.com",
-
           "client_type": 3
         }
       ],
       "api_key": [
         {
           "current_key": "AIzaSyATozhStJBqQpSX0psTuo49rIAvCK-uZY8"
-
         }
       ],
       "services": {
@@ -33,9 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464571935371-664rettsfhgk7ekqff7k2oaa6buvt6ag.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
