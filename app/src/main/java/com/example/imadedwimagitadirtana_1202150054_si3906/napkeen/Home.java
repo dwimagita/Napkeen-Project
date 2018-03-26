@@ -41,6 +41,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
@@ -83,6 +84,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private ImageView photoImageView;
     private TextView nameTextView;
     private TextView emailTextView;
+    private GoogleSignInClient mGoogleSignInClient;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -236,7 +239,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                 logOutt();
+                                 signOut();
                             }})
                         .setNegativeButton(android.R.string.no, null).show();
 
@@ -284,6 +287,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     //sign out method
     public void signOut() {
         mAuth.signOut();
+
+      //  mGoogleSignInClient.signOut();
         startActivity(new Intent(Home.this, LoginActivity.class));
         finish();
 
