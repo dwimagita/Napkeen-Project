@@ -132,12 +132,14 @@
 
     <com.google.android.gms.common.SignInButton
 
-        android:id="@+id/gg_btn_signin"
+        android:id="@+id/google_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textatau"
         />
+
+
 
 
     <ProgressBar
