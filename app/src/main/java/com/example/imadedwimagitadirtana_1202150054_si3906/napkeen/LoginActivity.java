@@ -236,8 +236,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private void goMainScreen() {
         Intent intent = new Intent(LoginActivity.this, Home.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        //startActivityForResult(signInIntent, SIGN_IN_CODE);
+
         startActivity(intent);
         finish();
     }
