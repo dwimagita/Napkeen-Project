@@ -39,7 +39,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 public class SignupActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener  {
 
     private static final String TAG ="Log" ;
-    private EditText inputEmail, inputPassword, inputnama, email;
+    private EditText inputEmail, inputPassword, email;
     private Button btnSignUp;
     private ProgressBar progressBar;
     private FirebaseAuth auth;

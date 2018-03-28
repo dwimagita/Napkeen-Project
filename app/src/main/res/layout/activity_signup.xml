@@ -20,14 +20,7 @@
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/napkeenn" />
-    //EditText
-        android:id="@+id/nama_sign_up"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="Nama"
 
-         />
 
     <EditText
         android:id="@+id/emailforsignup"
