@@ -180,7 +180,7 @@ private CheckBox checkbox;
     private void initilizeUI() {
         // TODO Auto-generated method stub
 
-        email = (EditText) findViewById(R.id.emailforsignin);
+        email = (TextInputEditText) findViewById(R.id.emailforsignin);
 
         email.addTextChangedListener(new TextWatcher() {
 

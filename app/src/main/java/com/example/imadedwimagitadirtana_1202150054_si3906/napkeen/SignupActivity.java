@@ -6,6 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -39,11 +40,12 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 public class SignupActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener  {
 
     private static final String TAG ="Log" ;
-    private EditText inputEmail, inputPassword, email;
+    private EditText  email;
     private Button btnSignUp;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
     private String valid_email;
+    private TextInputEditText inputPassword, inputEmail;
 
     private GoogleApiClient googleApiClient;
 
@@ -64,8 +66,8 @@ public class SignupActivity extends AppCompatActivity implements GoogleApiClient
         auth = FirebaseAuth.getInstance();
 
         btnSignUp = (Button) findViewById(R.id.sign_up_button);
-        inputEmail = (EditText) findViewById(R.id.emailforsignup);
-        inputPassword = (EditText) findViewById(R.id.passwordforsignup);
+        inputEmail = (TextInputEditText) findViewById(R.id.emailforsignup);
+        inputPassword = (TextInputEditText) findViewById(R.id.passwordforsignup);
         progressBar = (ProgressBar) findViewById(R.id.progress);
 
        // inputnama = (EditText)findViewById(R.id.nama_sign_up);
@@ -155,7 +157,7 @@ public class SignupActivity extends AppCompatActivity implements GoogleApiClient
     private void initilizeUI() {
         // TODO Auto-generated method stub
 
-        email = (EditText) findViewById(R.id.emailforsignup);
+        email = (TextInputEditText) findViewById(R.id.emailforsignup);
 
         email.addTextChangedListener(new TextWatcher() {
 
