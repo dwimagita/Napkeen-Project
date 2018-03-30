@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="@color/colorPrimary"
     android:gravity="center_horizontal"
     android:orientation="vertical"
@@ -20,34 +21,59 @@
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/napkeenn" />
-
-    <EditText
-        android:id="@+id/emailforsignup"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/emailforsignup1"
+        app:passwordToggleEnabled="true"
         android:layout_below="@id/imageView3"
-        android:hint="Email"
-        android:inputType="text"
-        android:maxLines="1"
-        android:singleLine="true" />
 
-    <EditText
-        android:id="@+id/passwordforsignup"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailforsignup"
+            android:layout_below="@id/imageView3"
+
+            android:hint="Email"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/emailforsignup"
-        android:hint="@string/prompt_password"
-        android:inputType="textPassword" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/emailforsignup1"
+        android:id="@+id/passwordforsignup1"
+        app:passwordToggleEnabled="true"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordforsignup"
+            android:layout_below="@+id/emailforsignup"
+
+            android:hint="Password"
+            android:inputType="textPassword"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+
 
     <Button
         android:id="@+id/sign_up_button"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/passwordforsignup"
+        android:layout_marginTop="15dp"
+
+        android:layout_below="@id/passwordforsignup1"
         android:background="@color/tombolsignup"
         android:text="@string/action_sign_up"
-        android:layout_marginTop="15dp"
         android:textColor="@color/putih"
         android:textStyle="bold" />
 
@@ -66,12 +92,10 @@
         android:id="@+id/masukdidaftar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/textView6"
-        android:layout_toRightOf="@+id/textView6"
+
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
         android:onClick="menujulogin"
         android:textColor="@color/colorAccent"
         android:text="Masuk" />
@@ -106,23 +130,15 @@
         android:layout_marginTop="12dp"
         android:text="Atau" />
 
-    //com.facebook.login.widget.LoginButton
-    android:id="@+id/login_facebook_button"
-    android:layout_width="320dp"
-    android:layout_height="wrap_content"
-    android:layout_alignEnd="@+id/garisataukanan"
-    android:layout_alignRight="@+id/garisataukanan"
-    android:layout_below="@+id/garisataukiri"
-    android:layout_marginTop="14dp"
-    android:paddingBottom="15dp"
-    android:paddingTop="15dp" />
 
-    // com.google.android.gms.common.SignInButton
-    android:id="@+id/sign_in_button"
-    android:layout_width="320dp"
+    <com.google.android.gms.common.SignInButton
+
+    android:id="@+id/gg_signup_button"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
-    android:layout_below="@+id/textView8" />
+    android:layout_below="@+id/textView8"
+        />
 
 
     <TextView
