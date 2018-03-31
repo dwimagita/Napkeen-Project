@@ -157,8 +157,8 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView8"
+        android:layout_below="@id/gg_signup_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="8dp"
+        android:foregroundGravity="center"
         android:visibility="gone" />
 </RelativeLayout>

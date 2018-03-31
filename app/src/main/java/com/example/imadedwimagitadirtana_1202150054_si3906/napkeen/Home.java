@@ -217,8 +217,11 @@ private GoogleSignInResult result;
                 mDrawerLayout.closeDrawers();;
         break;
             case R.id.nav_nearby:
+                Intent t = new Intent(Home.this, DetailActivity.class);
+
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
                 mDrawerLayout.closeDrawers();;
+                startActivity(t);
                 break;
             case R.id.nav_tempat_terbaik:
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
