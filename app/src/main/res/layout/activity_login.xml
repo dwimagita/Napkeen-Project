@@ -174,18 +174,10 @@
         android:id="@+id/progressBar"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_below="@id/textView8"
+        android:layout_below="@id/google_btn"
         android:layout_gravity="center|bottom"
-
+        android:foregroundGravity="center"
         android:visibility="gone" />
 
-    //CheckBox
-        android:id="@+id/checkBoxsignin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/emailforsignin"
-        android:layout_alignRight="@+id/emailforsignin"
-        android:layout_alignTop="@+id/password"
-         />
 
 </RelativeLayout>
