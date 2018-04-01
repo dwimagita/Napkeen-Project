@@ -8,6 +8,6 @@ public class detail_restoran extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_restoran);
+        setContentView(R.layout.activity_detail_restoran2);
     }
 }
