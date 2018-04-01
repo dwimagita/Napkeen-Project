@@ -69,8 +69,6 @@
         android:layout_below="@+id/password1"
         android:text="@string/login"
         android:layout_marginTop="15dp"
-
-        android:onClick="Login"
         />
     <TextView
         android:id="@+id/btn_reset_password"
@@ -164,8 +162,13 @@
         android:layout_below="@+id/textatau"
         />
 
-
-
+   <com.facebook.login.widget.LoginButton
+       android:id="@+id/fb_btn"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_below="@+id/google_btn"
+       />
 
     <ProgressBar
         android:id="@+id/progressBar"
