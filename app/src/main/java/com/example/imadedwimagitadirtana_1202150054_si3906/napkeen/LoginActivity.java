@@ -62,11 +62,7 @@ private CheckBox checkbox;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-
         signInButton = (SignInButton) findViewById(R.id.google_btn);
-
-
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -88,9 +84,6 @@ private CheckBox checkbox;
         auth = FirebaseAuth.getInstance();
 
         initilizeUI();
-
-
-
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -306,8 +299,5 @@ private CheckBox checkbox;
         startActivity(intent);
         finish();
     }
-
-
-
 
 }
