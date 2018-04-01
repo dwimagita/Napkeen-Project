@@ -80,7 +80,7 @@
         </activity>
 
         <activity
-            android:name=".Main2Activity">
+            android:name=".DetailActivity">
         </activity>
 
         <activity android:name=".TambahRestoran" android:parentActivityName=".Home" >
