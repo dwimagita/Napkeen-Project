@@ -62,7 +62,6 @@
         android:layout_below="@id/passwordforsignup"
         android:background="@color/tombolsignup"
         android:text="@string/action_sign_up"
-        android:layout_marginTop="15dp"
         android:textColor="@color/putih"
         android:textStyle="bold" />
 
