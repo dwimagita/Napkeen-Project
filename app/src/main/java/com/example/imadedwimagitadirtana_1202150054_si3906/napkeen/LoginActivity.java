@@ -126,6 +126,8 @@ private CheckBox checkbox;
                                         Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
+
+
                                     Intent intent = new Intent(LoginActivity.this, Home.class);
                                     startActivity(intent);
                                     finish();
