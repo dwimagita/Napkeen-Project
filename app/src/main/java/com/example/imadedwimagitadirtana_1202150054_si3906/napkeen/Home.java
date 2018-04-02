@@ -86,12 +86,20 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private TextView emailTextView;
     private GoogleSignInClient mGoogleSignInClient;
 
-
+private GoogleSignInResult result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_home);
+
+        photoImageView = (ImageView) findViewById(R.id.imageUser);
+        nameTextView = (TextView) findViewById(R.id.NamaUserDrawer);
+        emailTextView = (TextView) findViewById(R.id.emailnavbar);
+
+
+//      final  GoogleSignInAccount account = result.getSignInAccount();
+
         setNavigationViewListener();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -107,6 +115,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
+
 
 
        mAuth = FirebaseAuth.getInstance();
@@ -132,6 +141,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                        // finish();
                     }else{
 
+                     //nameTextView.setText(account.getDisplayName());
+                    //emailTextView.setText(account.getEmail());
+
+                   // Glide.with(this).load(account.getPhotoUrl()).into(photoImageView);
                     }
 
             }};
@@ -171,9 +184,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        photoImageView = (ImageView) findViewById(R.id.imageUser);
-        nameTextView = (TextView) findViewById(R.id.NamaUserDrawer);
-        emailTextView = (TextView) findViewById(R.id.emailnavbar);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -206,8 +217,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 mDrawerLayout.closeDrawers();;
         break;
             case R.id.nav_nearby:
+                Intent t = new Intent(Home.this, DetailActivity.class);
+
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
                 mDrawerLayout.closeDrawers();;
+                startActivity(t);
                 break;
             case R.id.nav_tempat_terbaik:
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -247,19 +261,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             default: break;
         }
         return (super.onOptionsItemSelected(item));
-    }
-
-    private void logOutt() {
-        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
-            @Override
-            public void onResult(@NonNull Status status) {
-                if (status.isSuccess()) {
-                    goLogInScreen();
-                } else {
-                    //   Toast.makeText(getApplicationContext(), R.string.not_close_session, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     @Override
@@ -303,6 +304,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         public void onStart() {
             super.onStart();
             mAuth.addAuthStateListener(authListener);
+
             OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(googleApiClient);
             if (opr.isDone()) {
                 GoogleSignInResult result = opr.get();
@@ -347,11 +349,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         if (result.isSuccess()) {
 
             GoogleSignInAccount account = result.getSignInAccount();
-
-           // nameTextView.setText(account.getDisplayName());
-  //          emailTextView.setText(account.getEmail());
-
-    //        Glide.with(this).load(account.getPhotoUrl()).into(photoImageView);
 
         } else {
             goLogInScreen();

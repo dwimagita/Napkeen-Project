@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="@color/colorPrimary"
     android:gravity="center_horizontal"
     android:orientation="vertical"
@@ -20,36 +21,47 @@
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/napkeenn" />
-    //EditText
-        android:id="@+id/nama_sign_up"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="Nama"
-
-         />
-
-    <EditText
-        android:id="@+id/emailforsignup"
-        android:layout_width="match_parent"
-        android:layout_marginTop="15dp"
-
-        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/emailforsignup1"
+        app:passwordToggleEnabled="true"
         android:layout_below="@id/imageView3"
-        android:hint="Email"
-        android:inputType="text"
-        android:maxLines="1"
-        android:singleLine="true" />
 
-    <EditText
-        android:id="@+id/passwordforsignup"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailforsignup"
+            android:layout_below="@id/imageView3"
+
+            android:hint="Email"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/emailforsignup1"
+        android:id="@+id/passwordforsignup1"
+        app:passwordToggleEnabled="true"
+        >
 
-        android:layout_below="@id/emailforsignup"
-        android:hint="@string/prompt_password"
-        android:inputType="textPassword" />
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordforsignup"
+            android:layout_below="@+id/emailforsignup"
+
+            android:hint="Password"
+            android:inputType="textPassword"/>
+    </android.support.design.widget.TextInputLayout>
+
+
 
 
     <Button
@@ -59,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
 
-        android:layout_below="@id/passwordforsignup"
+        android:layout_below="@id/passwordforsignup1"
         android:background="@color/tombolsignup"
         android:text="@string/action_sign_up"
         android:textColor="@color/putih"
@@ -121,7 +133,7 @@
 
     <com.google.android.gms.common.SignInButton
 
-    android:id="@+id/sign_in_button"
+    android:id="@+id/gg_signup_button"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
@@ -145,8 +157,8 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView8"
+        android:layout_below="@id/gg_signup_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="8dp"
+        android:foregroundGravity="center"
         android:visibility="gone" />
 </RelativeLayout>

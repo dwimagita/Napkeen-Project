@@ -5,11 +5,17 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -42,24 +48,21 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     public static final int SIGN_IN_CODE = 777;
 
-    private EditText inputEmail, inputPassword;
+    private EditText  email;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
-
+private TextInputEditText inputPassword, inputEmail;
     private Button  btnLogin, btnReset;
     private GoogleSignInClient mGoogleSignInClient;
-
+    private String valid_email;
+private CheckBox checkbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-
         signInButton = (SignInButton) findViewById(R.id.google_btn);
-
-
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -70,18 +73,17 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         }
 
 
-        inputEmail = (EditText) findViewById(R.id.email);
+        inputEmail = (TextInputEditText) findViewById(R.id.emailforsignin);
 
-        inputPassword = (EditText) findViewById(R.id.password);
+        inputPassword = (TextInputEditText) findViewById(R.id.password);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         btnLogin = (Button) findViewById(R.id.btn_login);
-
+//checkbox = (CheckBox) findViewById(R.id.checkBoxsignin);
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-
-
+        initilizeUI();
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +126,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                                         Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
+
+
                                     Intent intent = new Intent(LoginActivity.this, Home.class);
                                     startActivity(intent);
                                     finish();
@@ -157,8 +161,65 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 startActivityForResult(intent, SIGN_IN_CODE);
             }
         });
-
+       // checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+       //     @Override
+       //     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+         //       if(isChecked) {
+       //             inputPassword.setInputType(InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+           //     } else {
+             //       inputPassword.setInputType(InputType.TYPE_NUMBER_FLAG_SIGNED);
+               // }
+            //}
+        //});
     }
+    private void initilizeUI() {
+        // TODO Auto-generated method stub
+
+        email = (TextInputEditText) findViewById(R.id.emailforsignin);
+
+        email.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+
+                // TODO Auto-generated method stub
+                Is_Valid_Email(email); // pass your EditText Obj here.
+            }
+
+            public void Is_Valid_Email(EditText edt) {
+                if (edt.getText().toString() == null) {
+                    edt.setError("Invalid Email Address");
+                    valid_email = null;
+                } else if (isEmailValid(edt.getText().toString()) == false) {
+                    edt.setError("Invalid Email Address");
+                    valid_email = null;
+                } else {
+                    valid_email = edt.getText().toString();
+                }
+            }
+
+            boolean isEmailValid(CharSequence email) {
+                return android.util.Patterns.EMAIL_ADDRESS.matcher(email)
+                        .matches();
+            } // end of TextWatcher (email)
+        });
+    }
+
     public void menujusignup (View view) {
         Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
         startActivity(intent);
@@ -236,13 +297,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private void goMainScreen() {
         Intent intent = new Intent(LoginActivity.this, Home.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        //startActivityForResult(signInIntent, SIGN_IN_CODE);
+
         startActivity(intent);
         finish();
     }
-
-
-
 
 }
