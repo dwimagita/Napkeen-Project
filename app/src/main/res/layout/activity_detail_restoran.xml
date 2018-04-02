@@ -333,25 +333,18 @@
             android:layout_below="@+id/alamat"
             android:text="Jl. Telekomunikasi 148-425" />
 
-        <Button
-            android:id="@+id/komentari"
-            android:layout_width="wrap_content"
+
+
+        <include
+            layout="@layout/include_comment"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/jalan"
-            android:layout_alignStart="@+id/jalan"
-            android:layout_below="@+id/sepuluhribu"
-            android:text="Komentari"/>
-
-
+            android:layout_below="@id/jalan"
+            />
     </RelativeLayout>
 
 
 
-    <include
-    layout="@layout/include_comment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
 
 
 </ScrollView>
