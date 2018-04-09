@@ -150,7 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewwaktubuka"
             android:fontFamily="casual"
-            android:hint="Waktu buka (ex: 9.00 - 22.00"
+            android:hint="Waktu buka (ex: 9.00 - 22.00)"
 
             />
 
