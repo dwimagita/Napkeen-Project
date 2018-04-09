@@ -6,7 +6,12 @@ public class Post {
     private String username;
     private String photo;
     private String photoTitle;
-    private String photoDesc;
+    private String photoAlamat;
+    private String photoDaerah;
+    private String photoHarga;
+    private String photoTelepon;
+    private String photoInformasi;
+    private String photoBuka;
 
     public String getPostId() {
         return postId;
@@ -40,11 +45,51 @@ public class Post {
         this.photoTitle = photoTitle;
     }
 
-    public String getPhotoDesc() {
-        return photoDesc;
+    public String getPhotoAlamat() {
+        return photoAlamat;
     }
 
-    public void setPhotoDesc(String photoDesc) {
-        this.photoDesc = photoDesc;
+    public void setPhotoAlamat(String photoAlamat) {
+        this.photoAlamat = photoAlamat;
+    }
+
+    public String getPhotoBuka() {
+        return photoBuka;
+    }
+
+    public void setPhotoBuka(String photoBuka) {
+        this.photoBuka = photoBuka;
+    }
+
+    public String getPhotoInformasi() {
+        return photoInformasi;
+    }
+
+    public void setPhotoInformasi(String photoInformasi) {
+        this.photoInformasi = photoInformasi;
+    }
+
+    public String getPhotoTelepon() {
+        return photoTelepon;
+    }
+
+    public void setPhotoTelepon(String photoTelepon) {
+        this.photoTelepon = photoTelepon;
+    }
+
+    public String getPhotoharga() {
+        return photoHarga;
+    }
+
+    public void setPhotoharga(String photoharga) {
+        this.photoHarga = photoharga;
+    }
+
+    public String getPhotoDaerah() {
+        return photoDaerah;
+    }
+
+    public void setPhotoDaerah(String photoDaerah) {
+        this.photoDaerah = photoDaerah;
     }
 }

@@ -5,7 +5,7 @@
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.CafeFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/RecyclerList1"
+        android:id="@+id/CafeRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>

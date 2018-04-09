@@ -33,7 +33,7 @@ public class TambahRestoran extends AppCompatActivity {
     //a constant to track the file chooser intent
     private static final int PICK_IMAGE_REQUEST = 234;
 
-    EditText postDesc, postTitle;
+    EditText postAlamat, postTitle, postDaerah, postHarga, postTelepon, postInformasi, postBuka;
     ImageView postPhoto;
     Button btnChoose, btndaftar;
 
@@ -46,7 +46,7 @@ public class TambahRestoran extends AppCompatActivity {
     String userEmail;
 
     // yang bakal dikirim
-    String username, title, desc;
+    String username, title, alamat, telepon, informasi, daerah, buka, harga;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +58,14 @@ public class TambahRestoran extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference("app_title").setValue("Napkeen");
 
         postTitle = findViewById(R.id.EdtTextnamarestoran);
-        postDesc = findViewById(R.id.EdtTextAlamatRestoran);
+        postAlamat = findViewById(R.id.EdtTextAlamatRestoran);
+        postTelepon = findViewById(R.id.EdtTextTelponRestoran);
+        postBuka = findViewById(R.id.EdtTextwaktubuka);
+        postInformasi = findViewById(R.id.EdtTextinfo);
+        postDaerah = findViewById(R.id.EdtTextDaerah);
+        postHarga = findViewById(R.id.EdtTextharga);
         postPhoto = findViewById(R.id.postPhoto);
+
         btnChoose = findViewById(R.id.buttonChoose);
         btndaftar = findViewById(R.id.tomboldaftar);
 
@@ -93,7 +99,13 @@ public class TambahRestoran extends AppCompatActivity {
             progressDialog.show();
 
             title = postTitle.getText().toString();
-            desc = postDesc.getText().toString();
+            alamat = postAlamat.getText().toString();
+            daerah = postDaerah.getText().toString();
+            buka = postBuka.getText().toString();
+            informasi = postInformasi.getText().toString();
+            telepon = postTelepon.getText().toString();
+            harga = postHarga.getText().toString();
+
 
             // database
             final DatabaseReference database = FirebaseDatabase.getInstance().getReference("posts");
@@ -112,7 +124,13 @@ public class TambahRestoran extends AppCompatActivity {
                             post.setUsername(username);
                             post.setPhoto(downloadUri.toString());
                             post.setPhotoTitle(title);
-                            post.setPhotoDesc(desc);
+                            post.setPhotoAlamat(alamat);
+                            post.setPhotoDaerah(daerah);
+                            post.setPhotoTelepon(telepon);
+                            post.setPhotoInformasi(informasi);
+                            post.setPhotoBuka(buka);
+                            post.setPhotoharga(harga);
+
 
                             database.child(postId).setValue(post);
                             progressDialog.dismiss();
