@@ -12,11 +12,25 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <ImageView
+            android:id="@+id/starrating"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignEnd="@+id/RestoranPhoto"
+            app:layout_constraintEnd_toEndOf="@+id/RestoranPhoto"
+            android:src="@drawable/ic_starrating" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/score_rating_detail"
+            app:layout_constraintEnd_toStartOf="@+id/starrating"
+            android:layout_alignTop="@+id/RestoranPhoto"
+            android:text="3.2"
+            />
 
         <ImageView
             android:id="@+id/RestoranPhoto"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -31,6 +45,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:text="photoTitle"
+            android:textSize="25dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="@+id/RestoranPhoto"
             app:layout_constraintHorizontal_bias="0.0"
