@@ -69,6 +69,7 @@ public class RestoranFragment extends Fragment {
         });
         return view;
     }
+
 }
 
 
