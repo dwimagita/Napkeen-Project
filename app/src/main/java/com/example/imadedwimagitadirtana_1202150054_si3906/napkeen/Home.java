@@ -242,7 +242,7 @@ private GoogleSignInResult result;
                 startActivity(tmbhrestoran);
                 break;
             case R.id.nav_pengaturan:
-                Intent ubahpassword = new Intent(Home.this, UbahPassword.class);
+                Intent ubahpassword = new Intent(Home.this, Pengaturan.class);
 
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
                 mDrawerLayout.closeDrawers();;

@@ -80,7 +80,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
         </activity>
-        <activity android:name=".Pengaturan"></activity>
+        <activity android:name=".Pengaturan" />
+        <activity android:name=".HapusAkun" />
+        <activity android:name=".UbahEmail"></activity>
     </application>
 
 </manifest>
