@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,15 +11,22 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="389dp"
+        android:layout_height="205dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="391dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_toEndOf="@+id/textView"
         android:layout_toRightOf="@+id/textView"
         android:layout_weight="1"
         android:adjustViewBounds="false"
         android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/food"
         tools:ignore="UnknownId" />
 
@@ -30,10 +37,19 @@
         android:layout_alignBottom="@+id/imageView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:background="#99FFFFFF"
         android:cropToPadding="false"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.973"
         app:srcCompat="@drawable/napkeenn"
         tools:ignore="UnknownId" />
 
@@ -44,11 +60,23 @@
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignStart="@+id/textView3"
         android:layout_centerVertical="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
         android:background="#FFFFFF"
         android:text="@string/deskripsi_welcomepage"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.048" />
 
 
     <TextView
@@ -57,34 +85,48 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView2"
         android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="cursive"
         android:text="@string/selamat_datang_di_napkeen"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="205dp" />
 
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
-        android:layout_marginLeft="37dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/sudah_memiliki_akun" />
+        android:layout_marginLeft="52dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/sudah_memiliki_akun"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignBottom="@+id/textView4"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="37dp"
-        android:layout_marginRight="37dp"
-        android:text="@string/belum_memiliki_akun" />
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/belum_memiliki_akun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/masuk"
@@ -95,22 +137,41 @@
         android:layout_alignEnd="@id/textView4"
         android:layout_alignLeft="@+id/textView4"
         android:layout_alignStart="@+id/textView4"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="12dp"
         android:onClick="launchLoginActivity"
-        android:text="@string/masuk" />
+        android:text="@string/masuk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.088" />
 
     <Button
         android:id="@+id/daftar"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@id/textView5"
         android:layout_alignLeft="@+id/textView5"
         android:layout_alignStart="@+id/textView5"
         android:layout_below="@+id/textView5"
-        android:layout_marginTop="15dp"
 
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
         android:onClick="launchSignupActivity"
-        android:text="@string/daftar_disini" />
+        android:text="@string/daftar_disini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/masuk"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

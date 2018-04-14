@@ -4,6 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".UbahEmail">
+
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/EdtTextOldEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Current Email"
+        />
+
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/EdttextNewEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="New Email"
+        app:layout_constraintTop_toBottomOf="@+id/EdtTextOldEmail"
+        tools:layout_editor_absoluteX="0dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:foregroundGravity="center_vertical"
+        android:indeterminate="false"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="20dp"
+        />
+
+    <Button
+        android:id="@+id/buttonUbahEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+
+        android:text="Ubah Email"
+        app:layout_constraintTop_toBottomOf="@+id/EdttextNewEmail"
+        tools:layout_editor_absoluteX="103dp" />
 
 </android.support.constraint.ConstraintLayout>
