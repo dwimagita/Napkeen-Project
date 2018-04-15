@@ -1,9 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HapusAkun">
+    android:layout_gravity="center"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true"
+    android:padding="20dp"
+    tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.ResetPassword">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/naplog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/napkeenn"
+            />
 
-</android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textHapusAkun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="Hapus Akun?"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:layout_below="@id/naplog"
+            />
+
+        <TextView
+            android:id="@+id/deschapusakun"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="Jika menghapus akun, maka semua data yang ada pada akun anda akan ikut terhapus."
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:textSize="14dp"
+            android:layout_below="@id/textHapusAkun"
+            />
+
+
+
+
+
+        <Button
+            android:id="@+id/btn_hapus_akun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/colorAccent"
+            android:text="Hapus Akun"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/deschapusakun"
+            />
+
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
+</RelativeLayout>

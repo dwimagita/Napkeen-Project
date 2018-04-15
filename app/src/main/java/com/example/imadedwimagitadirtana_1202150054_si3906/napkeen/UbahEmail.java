@@ -65,12 +65,16 @@ public class UbahEmail extends AppCompatActivity {
         btnChangeEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String mail = oldemail.getText().toString();
+
                 progressBar.setVisibility(View.VISIBLE);
                 if (user != null && !newemail.getText().toString().trim().equals("")) {
                     user.updateEmail(newemail.getText().toString().trim())
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
+
                                     if (task.isSuccessful()) {
                                         Toast.makeText(UbahEmail.this, "Email address is updated. Please sign in with new email id!", Toast.LENGTH_LONG).show();
                                         signOut();

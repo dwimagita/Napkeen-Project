@@ -75,14 +75,37 @@
         <activity
             android:name=".UbahPassword"
             android:label="Ubah Password"
+            android:parentActivityName=".Pengaturan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Pengaturan" />
+        </activity>
+        <activity
+            android:name=".Pengaturan"
+            android:label="Pengaturan"
             android:parentActivityName=".Home">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
         </activity>
-        <activity android:name=".Pengaturan" />
-        <activity android:name=".HapusAkun" />
-        <activity android:name=".UbahEmail"></activity>
-    </application>
+        <activity
+            android:name=".HapusAkun"
+            android:label="Hapus Akun"
+            android:parentActivityName=".Pengaturan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Pengaturan" />
+        </activity>
+        <activity
+            android:name=".UbahEmail"
+            android:label="Ubah Email"
+            android:parentActivityName=".Pengaturan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Pengaturan" />
+        </activity>
 
-</manifest>
+
+</application>
+
+    </manifest>

@@ -4,18 +4,11 @@ package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
-import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,16 +17,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,12 +35,12 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
@@ -86,7 +73,14 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private TextView emailTextView;
     private GoogleSignInClient mGoogleSignInClient;
 
+    private FirebaseUser mFirebaseUser;
+
+
+
 private GoogleSignInResult result;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,12 +111,13 @@ private GoogleSignInResult result;
                 .build();
 
 
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-       mAuth = FirebaseAuth.getInstance();
-    //    FirebaseUser user = mAuth.getCurrentUser();
-//        String email = user.getEmail();
-  //      showEmail = findViewById(R.id.emailnavbar);
-    //    showEmail.setText(email);
+        mAuth = FirebaseAuth.getInstance();
+        mFirebaseUser = mAuth.getCurrentUser();
+
+
+
        final GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(Home.this);
 
         authListener = new FirebaseAuth.AuthStateListener() {
@@ -141,11 +136,8 @@ private GoogleSignInResult result;
                        // finish();
                     }else{
 
-                     //nameTextView.setText(account.getDisplayName());
-                    //emailTextView.setText(account.getEmail());
 
-                   // Glide.with(this).load(account.getPhotoUrl()).into(photoImageView);
-                    }
+                }
 
             }};
 
