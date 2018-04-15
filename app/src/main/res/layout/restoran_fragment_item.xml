@@ -18,7 +18,8 @@
             android:layout_height="20dp"
             android:layout_alignEnd="@+id/RestoranPhoto"
             app:layout_constraintEnd_toEndOf="@+id/RestoranPhoto"
-            android:src="@drawable/ic_starrating" />
+            android:src="@drawable/ic_starrating"
+            android:layout_alignRight="@+id/RestoranPhoto" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"

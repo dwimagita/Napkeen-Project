@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -10,6 +11,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -104,7 +109,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Pengaturan" />
         </activity>
-        <activity android:name=".UserProfil"></activity>
+        <activity android:name=".UserProfil" android:label="Profil" android:parentActivityName=".Home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+
+        </activity>
     </application>
 
 </manifest>

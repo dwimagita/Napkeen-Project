@@ -230,8 +230,8 @@
 
         <ImageView
             android:id="@+id/postPhoto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:layout_below="@id/radiogroupjenismakanan"
             android:layout_centerHorizontal="true"
             app:srcCompat="@mipmap/ic_launcher" />
