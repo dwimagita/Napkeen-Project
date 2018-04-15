@@ -62,5 +62,17 @@
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
 
-
+    <string-array name="spinner_location">
+        <item>Sukapura</item>
+        <item>Sukabirus</item>
+        <item>Mengger Hilir</item>
+        <item>Ciganitri</item>
+        <item>Lengkong</item>
+        <item>Babakan Radio</item>
+        <item>PGA</item>
+        <item>Cikoneng</item>
+        <item>Cijagra</item>
+        <item>Radio Palasari</item>
+        <item>Adhyaksa</item>
+    </string-array>
 </resources>
