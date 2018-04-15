@@ -13,7 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/relative"
+    android:background="#99FFEAC6"
 
+    >
         <ImageView
             android:id="@+id/detailphoto"
             android:layout_width="300dp"
@@ -38,6 +44,9 @@
             android:layout_alignTop="@+id/detailphoto"
             android:layout_toLeftOf="@+id/starrating"
             android:text="3.2" />
+</RelativeLayout>
+
+
 
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
@@ -53,7 +62,7 @@
             android:id="@+id/DetailNamaRestoran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/detailphoto"
+            android:layout_below="@id/relative"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:fontFamily="cursive"
