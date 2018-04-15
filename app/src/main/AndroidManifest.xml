@@ -104,8 +104,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Pengaturan" />
         </activity>
+        <activity android:name=".UserProfil"></activity>
+    </application>
 
-
-</application>
-
-    </manifest>
+</manifest>

@@ -55,12 +55,7 @@ public class UbahEmail extends AppCompatActivity {
             }
         };
 
-        btnChangeEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
 
         btnChangeEmail.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -15,12 +15,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,7 +49,6 @@ import com.google.firebase.database.ValueEventListener;
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
 
 
-
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -65,6 +67,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
     private DrawerLayout mDrawerLayout;
 
+
     public TextView showEmail;
     private GoogleApiClient googleApiClient;
 
@@ -74,11 +77,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private GoogleSignInClient mGoogleSignInClient;
 
     private FirebaseUser mFirebaseUser;
+private CardView mCardView;
 
-
-
-private GoogleSignInResult result;
-
+    private GoogleSignInResult result;
 
 
     @Override
@@ -90,8 +91,6 @@ private GoogleSignInResult result;
         photoImageView = (ImageView) findViewById(R.id.imageUser);
         nameTextView = (TextView) findViewById(R.id.NamaUserDrawer);
         emailTextView = (TextView) findViewById(R.id.emailnavbar);
-
-
 //      final  GoogleSignInAccount account = result.getSignInAccount();
 
         setNavigationViewListener();
@@ -105,10 +104,12 @@ private GoogleSignInResult result;
                 .requestEmail()
                 .build();
 
-       googleApiClient = new GoogleApiClient.Builder(this)
+        googleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
+
+
 
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -117,10 +118,12 @@ private GoogleSignInResult result;
         mFirebaseUser = mAuth.getCurrentUser();
 
 
-
-       final GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(Home.this);
+        final GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(Home.this);
 
         authListener = new FirebaseAuth.AuthStateListener() {
+
+
+
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 //get current user
@@ -129,17 +132,18 @@ private GoogleSignInResult result;
                 if (account == null) {
                     //logOutt();
                 } else if
-                    (user == null) {
-                        // user auth state is changed - user is null
-                        // launch login activity
-                       // startActivity(new Intent(Home.this, LoginActivity.class));
-                       // finish();
-                    }else{
+                        (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    // startActivity(new Intent(Home.this, LoginActivity.class));
+                    // finish();
+                } else {
 
 
                 }
 
-            }};
+            }
+        };
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_restaurant).setText(R.string.tab_label1));
@@ -153,8 +157,6 @@ private GoogleSignInResult result;
         final PagerAdapter adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
-
-
 
 
         viewPager.addOnPageChangeListener(new
@@ -183,16 +185,15 @@ private GoogleSignInResult result;
         toggle.syncState();
 
 
-
-
-        if(isOnline()){
-        }else{
+        if (isOnline()) {
+        } else {
             Toast.makeText(Home.this, "You are not connected to Internet", Toast.LENGTH_SHORT).show();
         }
 
         mAuth = FirebaseAuth.getInstance();
 
     }
+
 
     private void setNavigationViewListener() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
@@ -206,38 +207,45 @@ private GoogleSignInResult result;
             case R.id.nav_home:
 
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-                mDrawerLayout.closeDrawers();;
-        break;
+                mDrawerLayout.closeDrawers();
+                ;
+                break;
             case R.id.nav_nearby:
                 Intent t = new Intent(Home.this, DetailActivity.class);
 
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-                mDrawerLayout.closeDrawers();;
+                mDrawerLayout.closeDrawers();
+                ;
                 startActivity(t);
                 break;
             case R.id.nav_tempat_terbaik:
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-                mDrawerLayout.closeDrawers();;
+                mDrawerLayout.closeDrawers();
+                ;
                 break;
             case R.id.nav_bantuan:
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-                mDrawerLayout.closeDrawers();;
+                mDrawerLayout.closeDrawers();
+                ;
                 break;
             case R.id.nav_tentang:
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-                mDrawerLayout.closeDrawers();;
+                mDrawerLayout.closeDrawers();
+                ;
                 break;
             case R.id.nav_tambah_restoran:
                 Intent tmbhrestoran = new Intent(Home.this, TambahRestoran.class);
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-                mDrawerLayout.closeDrawers();;
+                mDrawerLayout.closeDrawers();
+                ;
                 startActivity(tmbhrestoran);
                 break;
             case R.id.nav_pengaturan:
                 Intent ubahpassword = new Intent(Home.this, Pengaturan.class);
 
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-                mDrawerLayout.closeDrawers();;
+                mDrawerLayout.closeDrawers();
+                ;
                 startActivity(ubahpassword);
                 break;
             case R.id.nav_Keluar:
@@ -248,12 +256,14 @@ private GoogleSignInResult result;
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                 signOut();
-                            }})
+                                signOut();
+                            }
+                        })
                         .setNegativeButton(android.R.string.no, null).show();
 
                 break;
-            default: break;
+            default:
+                break;
         }
         return (super.onOptionsItemSelected(item));
     }
@@ -262,8 +272,8 @@ private GoogleSignInResult result;
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
-        MenuItem item =  menu.findItem(R.id.action_search);
-        SearchView searchView =(SearchView)item.getActionView();
+        MenuItem item = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) item.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -284,45 +294,47 @@ private GoogleSignInResult result;
     public void signOut() {
         mAuth.signOut();
 
-      //  mGoogleSignInClient.signOut();
+        //  mGoogleSignInClient.signOut();
         startActivity(new Intent(Home.this, LoginActivity.class));
         finish();
 
     }
-        @Override
-        protected void onResume() {
-            super.onResume();
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(authListener);
+
+        OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(googleApiClient);
+        if (opr.isDone()) {
+            GoogleSignInResult result = opr.get();
+            handleSignInResult(result);
+        } else {
+            opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
+                @Override
+                public void onResult(@NonNull GoogleSignInResult googleSignInResult) {
+                    handleSignInResult(googleSignInResult);
+                }
+            });
         }
+    }
 
-        @Override
-        public void onStart() {
-            super.onStart();
-            mAuth.addAuthStateListener(authListener);
-
-            OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(googleApiClient);
-            if (opr.isDone()) {
-                GoogleSignInResult result = opr.get();
-                handleSignInResult(result);
-            } else {
-                opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
-                    @Override
-                    public void onResult(@NonNull GoogleSignInResult googleSignInResult) {
-                        handleSignInResult(googleSignInResult);
-                    }
-                });
-            }
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (authListener != null) {
+            mAuth.removeAuthStateListener(authListener);
         }
+    }
 
-        @Override
-        public void onStop() {
-            super.onStop();
-            if (authListener != null) {
-                mAuth.removeAuthStateListener(authListener);
-            }
-        }
     public boolean isOnline() {
-        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         if (netInfo != null && netInfo.isConnectedOrConnecting()) {
             return true;
@@ -330,11 +342,13 @@ private GoogleSignInResult result;
             return false;
         }
     }
+
     private void goLogInScreen() {
         Intent intent = new Intent(this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
@@ -349,6 +363,15 @@ private GoogleSignInResult result;
             goLogInScreen();
         }
     }
+
+    public void toUserProfil(View v){
+        Intent intent = new Intent(Home.this, UserProfil.class);
+
+        startActivity(intent);
+        //something TODO
+
+    }
+
 }
 
 
