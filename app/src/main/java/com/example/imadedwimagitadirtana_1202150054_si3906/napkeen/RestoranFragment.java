@@ -3,11 +3,13 @@ package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,11 +26,11 @@ import java.util.List;
  */
 public class RestoranFragment extends Fragment {
 
+    private ProgressBar progressBar;
 
     RecyclerView RestoranRecycler;
     RestoranAdapter adapter;
     List<Post> posts;
-
     DatabaseReference databaseReference;
 
     public RestoranFragment() {}
@@ -44,6 +46,8 @@ public class RestoranFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.restoran_fragment, container, false);
 
+
+
         posts = new ArrayList<>();
 
         RestoranRecycler = view.findViewById(R.id.RestoranRecycler);
@@ -53,6 +57,7 @@ public class RestoranFragment extends Fragment {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Post post = snapshot.getValue(Post.class);
                     posts.add(post);
@@ -60,6 +65,7 @@ public class RestoranFragment extends Fragment {
 
                 adapter = new RestoranAdapter(getActivity(), posts);
                 RestoranRecycler.setAdapter(adapter);
+
             }
 
             @Override

@@ -6,7 +6,6 @@
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.RestoranFragment">
 
 
-
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/RestoranRecycler"
@@ -15,5 +14,6 @@
         >
 
     </android.support.v7.widget.RecyclerView>
+
 
 </FrameLayout>
