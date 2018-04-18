@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="368dp"
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="173dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="302dp"
+        android:layout_height="42dp"
+        android:background="#FFFF8080"
+        android:text="Hapus akun saya sekarang"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="250dp" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="368dp"
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="311dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="302dp"
+        android:layout_height="42dp"
+        android:text="Kembali ke Pengaturan"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="256dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="270dp"
+        android:layout_height="36dp"
+        android:text="Anda akan menghapus akun anda"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="326dp"
+        android:layout_height="85dp"
+        android:text="Semua data pada akun ini(profil, komentar dan foto)akan secara permanent terhapus dalam waktu 30 hari. Tindakan ini tidak dapat diubah."
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="69dp" />
+</android.support.constraint.ConstraintLayout>
