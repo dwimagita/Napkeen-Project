@@ -229,12 +229,10 @@ private CardView mCardView;
                 ;
                 break;
             case R.id.nav_tentang:
-                Intent search = new Intent(Home.this, SearchActivity.class);
 
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
                 mDrawerLayout.closeDrawers();
                 ;
-                startActivity(search);
                 break;
             case R.id.nav_tambah_restoran:
                 Intent tmbhrestoran = new Intent(Home.this, TambahRestoran.class);

@@ -47,7 +47,7 @@ dependencies {
 
     implementation 'com.android.support:mediarouter-v7:27.1.0'
 
-    implementation 'com.firebaseui:firebase-ui-database:3.1.0'
+    implementation 'com.firebaseui:firebase-ui-database:3.3.0'
 
     //Glide Library
     implementation 'com.github.bumptech.glide:glide:4.0.0'
