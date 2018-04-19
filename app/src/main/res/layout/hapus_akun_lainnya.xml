@@ -25,12 +25,13 @@
         tools:layout_editor_absoluteX="73dp"
         tools:layout_editor_absoluteY="14dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView13"
         android:layout_width="325dp"
         android:layout_height="119dp"
         android:background="#FFEAC6"
-        android:text="Apakah anda mempunyai komentar tambahan? Kami akan senang mendengarnya dari anda!(opsional)"
+        android:hint="Apakah anda mempunyai komentar tambahan? Kami akan senang mendengarnya dari anda!(opsional)"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="84dp" />
+
 </android.support.constraint.ConstraintLayout>
