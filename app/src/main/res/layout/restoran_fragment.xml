@@ -2,13 +2,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.TabFragment3">
+    android:padding="10dp"
+    tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.RestoranFragment">
+
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/RecyclerList1"
+        android:id="@+id/RestoranRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
+
     </android.support.v7.widget.RecyclerView>
+
 
 </FrameLayout>
