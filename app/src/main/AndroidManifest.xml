@@ -90,8 +90,7 @@
             android:name=".Pengaturan"
             android:label="Pengaturan"
             android:parentActivityName=".Home"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
@@ -99,8 +98,7 @@
         <activity
             android:name=".HapusAkun"
             android:label="Hapus Akun"
-            android:parentActivityName=".Pengaturan"
-            >
+            android:parentActivityName=".Pengaturan">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Pengaturan" />
@@ -121,13 +119,29 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
         </activity>
-
         <activity
             android:name=".Tentang"
             android:label="Tentang"
             android:parentActivityName=".Home"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+        <activity
+            android:name=".RatingTertinggi"
+            android:label="Tempat Terbaik"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+        <activity
+            android:name=".TempatMakanTerdekat"
+            android:label="Nearby"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
