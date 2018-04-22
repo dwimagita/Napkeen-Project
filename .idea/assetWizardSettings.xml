@@ -3,14 +3,6 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
-<<<<<<< HEAD
-        <entry key="imageWizard">
-          <value>
-            <PersistentState />
-          </value>
-        </entry>
-=======
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -26,11 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-<<<<<<< HEAD
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/toggle/ic_star_black_24dp.xml" />
-=======
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_settings_black_24dp.xml" />
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_map_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -40,12 +28,7 @@
                         </option>
                         <option name="values">
                           <map>
-<<<<<<< HEAD
-                            <entry key="color" value="fdff16" />
-                            <entry key="outputName" value="ic_starrating" />
-=======
-                            <entry key="outputName" value="ic_setting" />
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
+                            <entry key="outputName" value="ic_daerah" />
                             <entry key="sourceFile" value="C:\Users\dwima" />
                           </map>
                         </option>

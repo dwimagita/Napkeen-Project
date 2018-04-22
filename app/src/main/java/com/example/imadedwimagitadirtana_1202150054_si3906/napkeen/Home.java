@@ -211,17 +211,28 @@ private CardView mCardView;
                 ;
                 break;
             case R.id.nav_nearby:
-                Intent t = new Intent(Home.this, DetailActivity.class);
+                Intent t = new Intent(Home.this, TempatMakanTerdekat.class);
 
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
                 mDrawerLayout.closeDrawers();
                 ;
                 startActivity(t);
                 break;
-            case R.id.nav_tempat_terbaik:
+            case R.id.nav_daerah:
+                Intent te = new Intent(Home.this, DetailActivity.class);
+
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
                 mDrawerLayout.closeDrawers();
                 ;
+                startActivity(te);
+                break;
+            case R.id.nav_tempat_terbaik:
+                Intent tempatterbaik = new Intent(Home.this, RatingTertinggi.class);
+
+                mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+                mDrawerLayout.closeDrawers();
+                ;
+                startActivity(tempatterbaik);
                 break;
             case R.id.nav_bantuan:
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -259,6 +270,7 @@ private CardView mCardView;
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int whichButton) {
+
                                 signOut();
                             }
                         })
