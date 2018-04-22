@@ -219,7 +219,7 @@ private CardView mCardView;
                 startActivity(t);
                 break;
             case R.id.nav_daerah:
-                Intent te = new Intent(Home.this, DetailActivity.class);
+                Intent te = new Intent(Home.this, LocationSpinner.class);
 
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
                 mDrawerLayout.closeDrawers();
@@ -270,8 +270,12 @@ private CardView mCardView;
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int whichButton) {
+                                if (isOnline()) {
+                                    signOut();
+                                } else {
+                                    Toast.makeText(Home.this, "You are not connected to Internet", Toast.LENGTH_SHORT).show();
+                                }
 
-                                signOut();
                             }
                         })
                         .setNegativeButton(android.R.string.no, null).show();

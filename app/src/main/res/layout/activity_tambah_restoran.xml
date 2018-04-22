@@ -118,130 +118,6 @@
 
         <TextView
             android:id="@+id/textViewinfo"
-<<<<<<< HEAD
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/EdtTextharga"
-            android:fontFamily="casual"
-            android:text="Informasi Tambahan"
-
-            />
-
-        <EditText
-            android:id="@+id/EdtTextinfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewinfo"
-            android:fontFamily="casual"
-            android:hint="informasi lain" />
-
-        <TextView
-            android:id="@+id/textViewwaktubuka"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/EdtTextinfo"
-            android:fontFamily="casual"
-            android:text="Waktu Buka"
-
-            />
-
-        <EditText
-            android:id="@+id/EdtTextwaktubuka"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewwaktubuka"
-            android:fontFamily="casual"
-            android:hint="Waktu buka (ex: 9.00 - 22.00)"
-
-            />
-
-        <TextView
-            android:id="@+id/jenismakanan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/EdtTextwaktubuka"
-            android:fontFamily="casual"
-            android:text="Jenis Tempat Makan"
-
-            />
-
-        <RadioGroup
-            android:id="@+id/radiogroupjenismakanan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/jenismakanan"
-
-            >
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="Restoran" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="Cafe" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="Bar" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="Dessert" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/kebijakandesc"
-            android:layout_width="wrap_content"
-            android:layout_height="29dp"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@id/tomboldaftar"
-            android:layout_centerHorizontal="true"
-            android:ems="25"
-            android:fontFamily="casual"
-            android:text="@string/kebijakansignup"
-            android:textAlignment="center"
-            android:textSize="8sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="446dp" />
-
-        <Button
-            android:id="@+id/tomboldaftar"
-            style="?android:textAppearanceSmall"
-            android:layout_width="300dp"
-            android:layout_height="34dp"
-            android:layout_below="@id/buttonChoose"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:background="@color/tombolsignup"
-            android:fontFamily="casual"
-            android:text="@string/action_sign_up"
-            android:textColor="@color/putih"
-
-            android:textStyle="bold" />
-
-
-        <ImageView
-            android:id="@+id/postPhoto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/radiogroupjenismakanan"
-            android:layout_centerHorizontal="true"
-            app:srcCompat="@mipmap/ic_launcher" />
-
-        <Button
-            android:id="@+id/buttonChoose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-=======
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/EdtTextharga"
@@ -364,7 +240,6 @@
             android:id="@+id/buttonChoose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
             android:layout_below="@id/postPhoto"
             android:layout_centerHorizontal="true"
             android:layout_marginEnd="8dp"
@@ -376,5 +251,4 @@
     </RelativeLayout>
 
 </ScrollView>
-
 
