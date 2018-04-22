@@ -9,74 +9,55 @@
     android:fitsSystemWindows="true"
     android:padding="20dp"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.ResetPassword">
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-
-    <ImageView
-        android:id="@+id/naplog"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/napkeenn" />
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/naplog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/napkeenn"
+            />
 
 
         <TextView
-            android:id="@+id/textforgotpassword"
+            android:id="@+id/textHapusAkun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:padding="10dp"
-            android:text="@string/lbl_forgot_password"
+            android:text="Hapus Akun?"
             android:textColor="@android:color/black"
             android:textSize="20dp"
             android:layout_below="@id/naplog"
             />
 
         <TextView
-            android:id="@+id/descforgot"
+            android:id="@+id/deschapusakun"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_centerHorizontal="true"
-            android:text="@string/forgot_password_msg"
+            android:text="Jika menghapus akun, maka semua data yang ada pada akun anda akan ikut terhapus."
             android:gravity="center_horizontal"
             android:textColor="@android:color/black"
             android:textSize="14dp"
-            android:layout_below="@id/textforgotpassword"
+            android:layout_below="@id/textHapusAkun"
             />
 
-        <android.support.design.widget.TextInputLayout
-           android:id="@+id/edittextt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/descforgot"
-            >
 
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="20dp"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
-        </android.support.design.widget.TextInputLayout>
+
 
 
         <Button
-            android:id="@+id/btn_reset_password"
+            android:id="@+id/btn_hapus_akun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
             android:background="@color/colorAccent"
-            android:text="Reset Password"
+            android:text="Hapus Akun"
             android:textColor="@android:color/black"
-            android:layout_below="@id/edittextt"
+            android:layout_below="@id/deschapusakun"
             />
 
 

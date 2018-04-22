@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -10,6 +11,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<<<<<<< HEAD
+=======
+    <uses-permission
+        android:name="android.permission.MEDIA_CONTENT_CONTROL"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+>>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
 
     <application
         android:allowBackup="true"
@@ -63,15 +72,79 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
+<<<<<<< HEAD
         <activity android:name=".DetailActivity"></activity>
         <activity
             android:name=".TambahRestoran"
+=======
+        <activity android:name=".DetailActivity" />
+        <activity
+            android:name=".TambahRestoran"
+            android:label="Tambah Restoran"
             android:parentActivityName=".Home">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
         </activity>
+        <activity
+            android:name=".UbahPassword"
+            android:label="Ubah Password"
+            android:parentActivityName=".Pengaturan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Pengaturan" />
+        </activity>
+        <activity
+            android:name=".Pengaturan"
+            android:label="Pengaturan"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+        <activity
+            android:name=".HapusAkun"
+            android:label="Hapus Akun"
+            android:parentActivityName=".Pengaturan"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Pengaturan" />
+        </activity>
+        <activity
+            android:name=".UbahEmail"
+            android:label="Ubah Email"
+            android:parentActivityName=".Pengaturan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Pengaturan" />
+        </activity>
+        <activity
+            android:name=".UserProfil"
+            android:label="Profil"
+>>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
+            android:parentActivityName=".Home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+<<<<<<< HEAD
         <activity android:name=".LocationSpinner"></activity>
+=======
+
+        <activity
+            android:name=".Tentang"
+            android:label="Tentang"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+>>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
     </application>
 
 </manifest>

@@ -1,8 +1,8 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="@color/colorPrimary"
     android:gravity="center_horizontal"
     android:orientation="vertical"
@@ -19,49 +19,41 @@
         android:id="@+id/imageView3"
         android:layout_width="200dp"
         android:layout_height="80dp"
-        android:layout_centerHorizontal="true"
         android:src="@drawable/napkeenn" />
+
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/emailforsignup1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/emailforsignup1"
         app:passwordToggleEnabled="true"
-        android:layout_below="@id/imageView3"
 
         >
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/emailforsignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/emailforsignup"
             android:layout_below="@id/imageView3"
 
-            android:hint="Email"
-            />
+            android:hint="Email" />
     </android.support.design.widget.TextInputLayout>
 
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/passwordforsignup1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/emailforsignup1"
-        android:id="@+id/passwordforsignup1"
-        app:passwordToggleEnabled="true"
-        >
+        app:passwordToggleEnabled="true">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/passwordforsignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/passwordforsignup"
             android:layout_below="@+id/emailforsignup"
 
             android:hint="Password"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword" />
     </android.support.design.widget.TextInputLayout>
-
-
 
 
     <Button
@@ -71,7 +63,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
 
-        android:layout_below="@id/passwordforsignup1"
         android:background="@color/tombolsignup"
         android:text="@string/action_sign_up"
         android:textColor="@color/putih"
@@ -82,9 +73,8 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView3"
-        android:layout_alignStart="@+id/imageView3"
-        android:layout_below="@+id/sign_up_button"
+
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Sudah punya akun ? " />
 
@@ -93,51 +83,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_below="@+id/textView6"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
         android:onClick="menujulogin"
-        android:textColor="@color/colorAccent"
-        android:text="Masuk" />
+        android:text="Masuk"
+        android:textColor="@color/colorAccent" />
 
-
-    <View
-        android:id="@+id/garisataukiri"
-        android:layout_width="120dp"
-        android:layout_height="1dp"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_alignLeft="@+id/sign_up_button"
-        android:layout_alignStart="@+id/sign_up_button"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="6dp"
-        android:background="@android:color/darker_gray" />
-
-    <View
-        android:id="@+id/garisataukanan"
-        android:layout_width="120dp"
-        android:layout_height="1dp"
-        android:layout_above="@+id/garisataukiri"
-        android:layout_alignEnd="@+id/sign_up_button"
-        android:layout_alignRight="@+id/sign_up_button"
-        android:background="@android:color/darker_gray" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/masukdidaftar"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="12dp"
         android:text="Atau" />
 
+    <View
+        android:id="@+id/garisataukanan"
+        android:layout_width="120dp"
+        android:layout_height="1dp"
+        android:layout_gravity="left"
+
+        android:background="@android:color/darker_gray" />
+
+    <View
+        android:id="@+id/garisataukiri"
+        android:layout_width="120dp"
+        android:layout_height="1dp"
+        android:layout_gravity="right"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="6dp"
+        android:background="@android:color/darker_gray" />
 
     <com.google.android.gms.common.SignInButton
 
-    android:id="@+id/gg_signup_button"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_below="@+id/textView8"
+        android:id="@+id/gg_signup_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+   android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         />
 
 
@@ -161,4 +145,4 @@
         android:layout_centerHorizontal="true"
         android:foregroundGravity="center"
         android:visibility="gone" />
-</RelativeLayout>
+</LinearLayout>

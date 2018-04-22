@@ -6,11 +6,24 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:elevation="@dimen/cardview_default_elevation"
+<<<<<<< HEAD
     app:cardCornerRadius="@dimen/cardview_default_radius">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+=======
+    android:background="#FFEAC6"
+
+    app:cardCornerRadius="@dimen/cardview_default_radius">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFEAC6"
+
+        >
+>>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
 
         <TextView
             android:id="@+id/commentUser"
