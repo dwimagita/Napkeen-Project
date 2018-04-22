@@ -63,5 +63,17 @@
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="deskripsi_napkeen_tentang">Napkeen membantu anda menemukan tempat makan yang ingin anda kunjungi di sekitar Bandung. Napkeen membantumu mencari tahu info tentang tempat makan yang kamu sukai dan tempat makan rekomendasi dari user lainnya. Temukan tempat makan favoritmu disini!</string>
 
-
+    <string-array name="spinner_location">
+        <item>Sukapura</item>
+        <item>Sukabirus</item>
+        <item>Mengger Hilir</item>
+        <item>Ciganitri</item>
+        <item>Lengkong</item>
+        <item>Babakan Radio</item>
+        <item>PGA</item>
+        <item>Cikoneng</item>
+        <item>Cijagra</item>
+        <item>Radio Palasari</item>
+        <item>Adhyaksa</item>
+    </string-array>
 </resources>

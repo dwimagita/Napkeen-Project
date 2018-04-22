@@ -7,7 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+<<<<<<< HEAD
+=======
 import android.widget.ProgressBar;
+>>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -33,7 +36,10 @@ public class RestoranAdapter extends RecyclerView.Adapter<RestoranAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+<<<<<<< HEAD
+=======
 
+>>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
         Post post = posts.get(position);
         holder.RestoranPhotoName.setText(post.getPhotoTitle());
         holder.RestoranPhotoLoc.setText(post.getPhotoDaerah());

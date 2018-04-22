@@ -13,6 +13,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+<<<<<<< HEAD
+
+        <ImageView
+            android:id="@+id/detailphoto"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/makanan" />
+=======
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -28,6 +40,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
             android:src="@drawable/napkeenn" />
+>>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
 
         <ImageView
             android:id="@+id/starrating"
@@ -44,9 +57,12 @@
             android:layout_alignTop="@+id/detailphoto"
             android:layout_toLeftOf="@+id/starrating"
             android:text="3.2" />
+<<<<<<< HEAD
+=======
 </RelativeLayout>
 
 
+>>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
 
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
@@ -62,7 +78,11 @@
             android:id="@+id/DetailNamaRestoran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
+            android:layout_below="@id/detailphoto"
+=======
             android:layout_below="@id/relative"
+>>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:fontFamily="cursive"
