@@ -11,14 +11,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<<<<<<< HEAD
-=======
     <uses-permission
         android:name="android.permission.MEDIA_CONTENT_CONTROL"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
 
     <application
         android:allowBackup="true"
@@ -72,11 +69,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".DetailActivity"></activity>
-        <activity
-            android:name=".TambahRestoran"
-=======
         <activity android:name=".DetailActivity" />
         <activity
             android:name=".TambahRestoran"
@@ -98,8 +90,7 @@
             android:name=".Pengaturan"
             android:label="Pengaturan"
             android:parentActivityName=".Home"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
@@ -107,8 +98,7 @@
         <activity
             android:name=".HapusAkun"
             android:label="Hapus Akun"
-            android:parentActivityName=".Pengaturan"
-            >
+            android:parentActivityName=".Pengaturan">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Pengaturan" />
@@ -124,27 +114,38 @@
         <activity
             android:name=".UserProfil"
             android:label="Profil"
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
             android:parentActivityName=".Home">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".LocationSpinner"></activity>
-=======
-
         <activity
             android:name=".Tentang"
             android:label="Tentang"
             android:parentActivityName=".Home"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
         </activity>
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
+        <activity
+            android:name=".RatingTertinggi"
+            android:label="Tempat Terbaik"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+        <activity
+            android:name=".TempatMakanTerdekat"
+            android:label="Nearby"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
     </application>
 
 </manifest>

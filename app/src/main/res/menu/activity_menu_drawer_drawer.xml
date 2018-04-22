@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view"
-    >
+    tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
@@ -11,37 +10,50 @@
             android:title="Home"
 
             />
-        <View android:background="#000000"
-            android:layout_width = "match_parent"
-            android:layout_height="1dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFFFFF" />
         <item
             android:id="@+id/nav_nearby"
             android:icon="@drawable/ic_location"
             android:title="Nearby" />
-        <View android:background="#000000"
-            android:layout_width = "match_parent"
-            android:layout_height="1dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFFFFF" />
+        <item
+            android:id="@+id/nav_daerah"
+            android:icon="@drawable/ic_daerah"
+            android:title="Region" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFFFFF" />
         <item
             android:id="@+id/nav_tempat_terbaik"
             android:icon="@drawable/ic_star"
             android:title="Tempat Terbaik" />
-        <View android:background="#000000"
-            android:layout_width = "match_parent"
-            android:layout_height="1dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFFFFF" />
         <item
             android:id="@+id/nav_bantuan"
             android:icon="@drawable/ic_help"
             android:title="Bantuan" />
-        <View android:background="#000000"
-            android:layout_width = "match_parent"
-            android:layout_height="1dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFFFFF" />
         <item
             android:id="@+id/nav_tentang"
             android:icon="@drawable/ic_info"
             android:title="Tentang" />
-        <View android:background="#000000"
-            android:layout_width = "match_parent"
-            android:layout_height="1dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFFFFF" />
         <item
             android:id="@+id/nav_tambah_restoran"
             android:icon="@drawable/ic_restaurant"
@@ -55,9 +67,10 @@
                 android:id="@+id/nav_pengaturan"
                 android:icon="@drawable/ic_settings"
                 android:title="Pengaturan" />
-            <View android:background="#000000"
-                android:layout_width = "match_parent"
-                android:layout_height="1dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF" />
             <item
                 android:id="@+id/nav_Keluar"
                 android:icon="@drawable/ic_exit"

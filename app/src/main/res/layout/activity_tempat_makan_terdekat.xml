@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFEAC6"
-    >
+    tools:context=".TempatMakanTerdekat">
+
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_tentang"
+        android:id="@+id/toolbar_tempat_makan_terdekat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FF9052"
@@ -16,21 +16,4 @@
         >
 
     </android.support.v7.widget.Toolbar>
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tempat Makan Terbaik"
-        android:padding="10dp"
-        />
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        />
-
-
-
 </LinearLayout>
-
-
