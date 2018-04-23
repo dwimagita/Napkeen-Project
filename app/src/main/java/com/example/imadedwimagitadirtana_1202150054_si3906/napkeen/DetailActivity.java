@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
@@ -63,6 +66,8 @@ public class DetailActivity extends AppCompatActivity {
             detailinformasi.setText(getIntent().getStringExtra("informasi"));
             detailharga.setText(getIntent().getStringExtra("harga"));
             detaildaerah.setText(getIntent().getStringExtra("daerah"));
+            starCount.setText(getIntent().getStringExtra("rating"));
+
 
             postId = getIntent().getStringExtra("id");
 
@@ -94,6 +99,8 @@ public class DetailActivity extends AppCompatActivity {
         detailbuka = findViewById(R.id.DetailWaktubuka);
         detaildaerah = findViewById(R.id.DetailDaerahRestoran);
         detailtelepon = findViewById(R.id.noTelepon);
+        starCount = findViewById(R.id.starrating);
+
 
 
         detailComment = findViewById(R.id.detailComment);
@@ -159,4 +166,71 @@ public class DetailActivity extends AppCompatActivity {
             return null;
         }
     }
+
+    private void onStarClicked(DatabaseReference postRef) {
+
+        postRef.runTransaction(new Transaction.Handler() {
+
+            @Override
+
+            public Transaction.Result doTransaction(MutableData mutableData) {
+
+                Post p = mutableData.getValue(Post.class);
+
+                if (p == null) {
+
+                    return Transaction.success(mutableData);
+
+                }
+
+
+
+                if (p.stars.containsKey(getUid())) {
+
+                    // Unstar the post and remove self from stars
+
+                    p.starCount = p.starCount - 1;
+
+                    p.stars.remove(getUid());
+
+                } else {
+
+                    // Star the post and add self to stars
+
+                    p.starCount = p.starCount + 1;
+
+                    p.stars.put(getUid(), true);
+
+                }
+
+
+
+                // Set value and report transaction success
+
+                mutableData.setValue(p);
+
+                return Transaction.success(mutableData);
+
+            }
+
+
+
+            @Override
+
+            public void onComplete(DatabaseError databaseError, boolean b,
+
+                                   DataSnapshot dataSnapshot) {
+
+                // Transaction completed
+
+                Log.d(TAG, "postTransaction:onComplete:" + databaseError);
+
+            }
+
+        });
+
+    }
+
+    // [END post_stars_transaction]
+
 }

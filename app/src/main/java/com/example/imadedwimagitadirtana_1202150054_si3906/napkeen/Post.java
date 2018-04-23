@@ -1,5 +1,10 @@
 package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
 
+import com.google.firebase.database.Exclude;
+
+import java.util.HashMap;
+import java.util.Map;
+
 //class setter getter untuk post
 public class Post {
    private String postId;
@@ -12,6 +17,8 @@ public class Post {
     private String photoTelepon;
     private String photoInformasi;
     private String photoBuka;
+    private String starCount;
+    private String stars;
 
     public String getPostId() {
         return postId;
@@ -85,11 +92,23 @@ public class Post {
         this.photoHarga = photoharga;
     }
 
-    public String getPhotoDaerah() {
-        return photoDaerah;
+    public String getStarCount() {
+        return starCount;
     }
 
-    public void setPhotoDaerah(String photoDaerah) {
-        this.photoDaerah = photoDaerah;
+    public void setStarCount(String starCount) {
+        this.starCount = starCount;
     }
+
+    public String getStars() {
+        return stars;
+    }
+
+    public void setStars(String stars) {
+        this.stars = stars;
+    }
+
 }
+
+
+
