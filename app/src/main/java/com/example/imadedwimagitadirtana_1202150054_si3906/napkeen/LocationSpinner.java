@@ -2,6 +2,7 @@ package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,6 +30,12 @@ public class LocationSpinner extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_spinner);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_spinner);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.ic_daerah);
 
         spinnerLocation = (Spinner) findViewById(R.id.sp_name_2);
 

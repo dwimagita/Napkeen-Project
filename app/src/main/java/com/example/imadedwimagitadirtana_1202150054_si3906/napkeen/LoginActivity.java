@@ -1,4 +1,5 @@
 package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -8,23 +9,19 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
-import android.text.InputType;
+
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
@@ -39,23 +36,21 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 
-public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
+public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
-    private static final String TAG = "log" ;
+    private static final String TAG = "log";
     private GoogleApiClient googleApiClient;
 
     private SignInButton signInButton;
 
     public static final int SIGN_IN_CODE = 777;
 
-    private EditText  email;
+    private EditText email;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
-private TextInputEditText inputPassword, inputEmail;
-    private Button  btnLogin, btnReset;
-    private GoogleSignInClient mGoogleSignInClient;
+    private TextInputEditText inputPassword, inputEmail;
+    private Button btnLogin;
     private String valid_email;
-private CheckBox checkbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,11 +75,27 @@ private CheckBox checkbox;
 
         btnLogin = (Button) findViewById(R.id.btn_login);
 //checkbox = (CheckBox) findViewById(R.id.checkBoxsignin);
+        FirebaseUser user = auth.getCurrentUser();
+
+        if (user != null) {
+            String currentUserID = user.getUid();
+            // Use currentUserID
+        }
+
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
         initilizeUI();
-
+        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                if (firebaseUser != null) {
+                    String userId = firebaseUser.getUid();
+                    String userEmail = firebaseUser.getEmail();
+                }
+            }
+        };
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,8 +103,8 @@ private CheckBox checkbox;
                 String email = inputEmail.getText().toString();
 
                 final String password = inputPassword.getText().toString();
-                if(isOnline()){
-                }else{
+                if (isOnline()) {
+                } else {
                     Toast.makeText(LoginActivity.this, "You are not connected to Internet", Toast.LENGTH_SHORT).show();
                 }
                 if (TextUtils.isEmpty(email)) {
@@ -122,7 +133,7 @@ private CheckBox checkbox;
                                     // there was an error
                                     if (password.length() < 6) {
                                         inputPassword.setError(getString(R.string.minimum_password));
-                                    }else {
+                                    } else {
                                         Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
@@ -136,8 +147,8 @@ private CheckBox checkbox;
         });
 
 
-        if(isOnline()){
-        }else{
+        if (isOnline()) {
+        } else {
             Toast.makeText(LoginActivity.this, "You are not connected to Internet", Toast.LENGTH_SHORT).show();
         }
 
@@ -159,17 +170,8 @@ private CheckBox checkbox;
                 startActivityForResult(intent, SIGN_IN_CODE);
             }
         });
-       // checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-       //     @Override
-       //     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-         //       if(isChecked) {
-       //             inputPassword.setInputType(InputType.TYPE_NUMBER_VARIATION_PASSWORD);
-           //     } else {
-             //       inputPassword.setInputType(InputType.TYPE_NUMBER_FLAG_SIGNED);
-               // }
-            //}
-        //});
     }
+
     private void initilizeUI() {
         // TODO Auto-generated method stub
 
@@ -218,17 +220,18 @@ private CheckBox checkbox;
         });
     }
 
-    public void menujusignup (View view) {
+    public void menujusignup(View view) {
         Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
         startActivity(intent);
     }
-    public void menujuresetpassword (View view) {
+
+    public void menujuresetpassword(View view) {
         Intent intent = new Intent(LoginActivity.this, ResetPassword.class);
         startActivity(intent);
     }
 
     public boolean isOnline() {
-        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         if (netInfo != null && netInfo.isConnectedOrConnecting()) {
             return true;
@@ -289,7 +292,6 @@ private CheckBox checkbox;
                     }
                 });
     }
-
 
 
     private void goMainScreen() {

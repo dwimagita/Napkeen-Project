@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,256 +9,236 @@
     android:padding="10dp"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.DetailActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-<<<<<<< HEAD
-
-        <ImageView
-            android:id="@+id/detailphoto"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/makanan" />
-=======
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/relative"
-    android:background="#99FFEAC6"
+            android:layout_height="wrap_content">
 
-    >
-        <ImageView
-            android:id="@+id/detailphoto"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/napkeenn" />
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/relative"
+                    android:background="#99FFEAC6"
 
-        <ImageView
-            android:id="@+id/starrating"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_alignEnd="@+id/detailphoto"
-            android:layout_alignTop="@+id/detailphoto"
-            android:src="@drawable/ic_starrating" />
+                    >
+                        <ImageView
+                            android:id="@+id/detailphoto"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/napkeenn" />
 
-        <TextView
-            android:id="@+id/score_rating_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_alignTop="@+id/detailphoto"
-            android:layout_toLeftOf="@+id/starrating"
-            android:text="3.2" />
-<<<<<<< HEAD
-=======
-</RelativeLayout>
+                        <ImageView
+                            android:id="@+id/starrating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_alignEnd="@+id/detailphoto"
+                            android:layout_alignTop="@+id/detailphoto"
+                            android:src="@drawable/ic_starrating" />
+
+                        <TextView
+                            android:id="@+id/score_rating_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_alignTop="@+id/detailphoto"
+                            android:layout_toLeftOf="@+id/starrating"
+                            android:text="3.2" />
+                </RelativeLayout>
 
 
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
 
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_below="@id/Detaillokasi"
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_below="@id/Detaillokasi"
 
-            android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
-            android:layout_marginTop="10dp" />
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="10dp" />
 
-        <TextView
-            android:id="@+id/DetailNamaRestoran"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:layout_below="@id/detailphoto"
-=======
-            android:layout_below="@id/relative"
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:fontFamily="cursive"
-            android:text="Ayam Geprek"
-            android:textSize="36sp"
-            android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/DetailNamaRestoran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="cursive"
+                    android:text="Ayam Geprek"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/DetailDaerahRestoran"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/DetailNamaRestoran"
-            android:layout_centerHorizontal="true"
-            android:text="Jl. Sukabirus No. 11"
-            android:typeface="serif" />
+                <TextView
+                    android:id="@+id/DetailDaerahRestoran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/DetailNamaRestoran"
+                    android:layout_centerHorizontal="true"
+                    android:text="Jl. Sukabirus No. 11"
+                    android:typeface="serif" />
 
-        <TextView
-            android:id="@+id/buka"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/DetailDaerahRestoran"
-            android:layout_centerHorizontal="true"
-            android:text="Buka"
-            android:textColor="@android:color/holo_green_light"
-            android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/buka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/DetailDaerahRestoran"
+                    android:layout_centerHorizontal="true"
+                    android:text="Buka"
+                    android:textColor="@android:color/holo_green_light"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/DetailWaktubuka"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/buka"
-            android:layout_centerHorizontal="true"
+                <TextView
+                    android:id="@+id/DetailWaktubuka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/buka"
+                    android:layout_centerHorizontal="true"
 
-            android:text="9 Pagi - 10 Malam" />
+                    android:text="9 Pagi - 10 Malam" />
 
 
-        <ImageView
-            android:id="@+id/DetailBookmark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/DetailWaktubuka"
-            android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/ic_star"
-            tools:ignore="VectorDrawableCompat" />
+                <ImageView
+                    android:id="@+id/DetailBookmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/DetailWaktubuka"
+                    android:layout_centerHorizontal="true"
+                    app:srcCompat="@drawable/ic_star"
+                    tools:ignore="VectorDrawableCompat" />
 
 
-        <TextView
-            android:id="@+id/bookmark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/DetailBookmark"
-            android:layout_centerHorizontal="true"
-            android:text="Arsipkan"
-            android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/bookmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/DetailBookmark"
+                    android:layout_centerHorizontal="true"
+                    android:text="Arsipkan"
+                    android:textSize="10sp" />
 
-        <RatingBar
-            android:id="@+id/DetailratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bookmark"
-            android:layout_centerHorizontal="true" />
+                <RatingBar
+                    android:id="@+id/DetailratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bookmark"
+                    android:layout_centerHorizontal="true" />
 
-        <TextView
-            android:id="@+id/Detaillokasi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/konten"
-            android:layout_alignStart="@+id/konten"
-            android:layout_below="@+id/DetailratingBar"
-            android:layout_marginTop="19dp"
-            android:text="Lokasi" />
+                <TextView
+                    android:id="@+id/Detaillokasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/konten"
+                    android:layout_alignStart="@+id/konten"
+                    android:layout_below="@+id/DetailratingBar"
+                    android:layout_marginTop="19dp"
+                    android:text="Lokasi" />
 
-        <TextView
-            android:id="@+id/telepon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/mapView"
-            android:layout_below="@+id/mapView"
-            android:layout_marginTop="19dp"
-            android:text="Telepon" />
+                <TextView
+                    android:id="@+id/telepon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/mapView"
+                    android:layout_below="@+id/mapView"
+                    android:layout_marginTop="19dp"
+                    android:text="Telepon" />
 
-        <TextView
-            android:id="@+id/noTelepon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/telepon"
-            android:layout_alignStart="@+id/telepon"
-            android:layout_below="@+id/telepon"
-            android:text="081256738898" />
-
-
-        <TextView
-            android:id="@+id/harga"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/mapView"
-            android:layout_below="@+id/noTelepon"
-            android:layout_marginTop="19dp"
-            android:text="Harga" />
-
-        <TextView
-            android:id="@+id/detailharga"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/telepon"
-            android:layout_alignStart="@+id/telepon"
-            android:layout_below="@+id/harga"
-            android:text="10.000 - 20.000" />
-
-        <TextView
-            android:id="@+id/informasitambahan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/noTelepon"
-            android:layout_alignEnd="@+id/mapView"
-            android:layout_alignRight="@+id/mapView"
-            android:text="Informasi Tambahan" />
-
-        <TextView
-            android:id="@+id/Detailtambahan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/informasitambahan"
-            android:layout_alignStart="@+id/informasitambahan"
-            android:layout_below="@+id/informasitambahan"
-            android:text="Akses Mudah" />
-
-        <TextView
-            android:id="@+id/alamat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/informasitambahan"
-            android:layout_alignStart="@+id/informasitambahan"
-            android:layout_below="@+id/Detailtambahan"
-            android:layout_marginTop="15dp"
-            android:text="Alamat" />
-
-        <TextView
-            android:id="@+id/DetailAlamatRestoran"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/informasitambahan"
-            android:layout_alignStart="@+id/informasitambahan"
-            android:layout_below="@+id/alamat"
-            android:text="Jl. Telekomunikasi 148-425" />
+                <TextView
+                    android:id="@+id/noTelepon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/telepon"
+                    android:layout_alignStart="@+id/telepon"
+                    android:layout_below="@+id/telepon"
+                    android:text="081256738898" />
 
 
-        <EditText
-            android:id="@+id/detailComment"
+                <TextView
+                    android:id="@+id/harga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/mapView"
+                    android:layout_below="@+id/noTelepon"
+                    android:layout_marginTop="19dp"
+                    android:text="Harga" />
 
-            android:layout_width="wrap_content"
-            android:layout_height="47dp"
-            android:layout_below="@id/DetailAlamatRestoran"
+                <TextView
+                    android:id="@+id/detailharga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/telepon"
+                    android:layout_alignStart="@+id/telepon"
+                    android:layout_below="@+id/harga"
+                    android:text="10.000 - 20.000" />
 
-            android:layout_toLeftOf="@+id/buttonPostComment"
-            android:ems="15"
-            android:hint="Write Comment"
-            android:inputType="text" />
+                <TextView
+                    android:id="@+id/informasitambahan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/noTelepon"
+                    android:layout_alignEnd="@+id/mapView"
+                    android:layout_alignRight="@+id/mapView"
+                    android:text="Informasi Tambahan" />
 
-        <Button
-            android:id="@+id/buttonPostComment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+                <TextView
+                    android:id="@+id/Detailtambahan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/informasitambahan"
+                    android:layout_alignStart="@+id/informasitambahan"
+                    android:layout_below="@+id/informasitambahan"
+                    android:text="Akses Mudah" />
 
-            android:layout_alignTop="@+id/detailComment"
-            android:text="Post" />
+                <TextView
+                    android:id="@+id/alamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/informasitambahan"
+                    android:layout_alignStart="@+id/informasitambahan"
+                    android:layout_below="@+id/Detailtambahan"
+                    android:layout_marginTop="15dp"
+                    android:text="Alamat" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerComment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/DetailAlamatRestoran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/informasitambahan"
+                    android:layout_alignStart="@+id/informasitambahan"
+                    android:layout_below="@+id/alamat"
+                    android:text="Jl. Telekomunikasi 148-425" />
 
-            android:layout_below="@id/detailComment"
-            app:layout_constraintTop_toBottomOf="@+id/detailComment" />
-    </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/detailComment"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_below="@id/DetailAlamatRestoran"
+
+                    android:layout_toLeftOf="@+id/buttonPostComment"
+                    android:ems="15"
+                    android:hint="Write Comment"
+                    android:inputType="text" />
+
+                <Button
+                    android:id="@+id/buttonPostComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+
+                    android:layout_alignTop="@+id/detailComment"
+                    android:text="Post" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@id/detailComment"
+                    app:layout_constraintTop_toBottomOf="@+id/detailComment" />
+        </RelativeLayout>
 
 
 </ScrollView>

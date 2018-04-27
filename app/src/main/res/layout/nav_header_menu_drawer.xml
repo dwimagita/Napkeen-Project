@@ -4,7 +4,6 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    xmlns:card_view="http://schemas.android.com/tools"
     android:background="#FF9052"
     android:gravity="bottom"
     android:orientation="vertical"
@@ -23,43 +22,6 @@
             android:layout_height="25dp"
             app:srcCompat="@drawable/napkeenn" />
 
-<<<<<<< HEAD
-</LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#FF9052"
-            >
-    <View android:background="#ffffff"
-        android:layout_width = "match_parent"
-        android:layout_height="1dp"/>
-
-    <ImageView
-        android:id="@+id/imageUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
-    <TextView
-        android:id="@+id/NamaUserDrawer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Android Studio"
-        android:layout_below="@id/imageUser"
-
-         />
-
-    <TextView
-        android:id="@+id/emailnavbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="android.studio@android.com"
-        android:layout_below="@id/NamaUserDrawer"
-        />
-=======
 
     </LinearLayout>
 
@@ -71,40 +33,39 @@
 
 
 
-        <RelativeLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toUserProfil"
+        android:clickable="true"
+        android:background="#FF9052"
+
+        >
+
+        <ImageView
+            android:id="@+id/imageUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/NamaUserDrawer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="toUserProfil"
-            android:clickable="true"
-            android:background="#FF9052"
+            android:layout_below="@id/imageUser"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:text="Android Studio"
 
-            >
+            />
 
-            <ImageView
-                android:id="@+id/imageUser"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/nav_header_vertical_spacing"
-                app:srcCompat="@mipmap/ic_launcher_round" />
+        <TextView
+            android:id="@+id/emailnavbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NamaUserDrawer"
+            android:text="android.studio@android.com" />
 
-            <TextView
-                android:id="@+id/NamaUserDrawer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imageUser"
-                android:paddingTop="@dimen/nav_header_vertical_spacing"
-                android:text="Android Studio"
-
-                />
-
-            <TextView
-                android:id="@+id/emailnavbar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/NamaUserDrawer"
-                android:text="android.studio@android.com" />
-
->>>>>>> a0af9f15a85f738276b9bccae28c3a3ca4cc959c
-        </RelativeLayout>
+    </RelativeLayout>
 
 </LinearLayout>
