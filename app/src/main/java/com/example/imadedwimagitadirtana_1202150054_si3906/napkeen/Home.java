@@ -1,12 +1,15 @@
 package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.design.internal.NavigationMenuPresenter;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -18,6 +21,8 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -38,12 +43,17 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import static java.security.AccessController.getContext;
 
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
@@ -68,7 +78,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private DrawerLayout mDrawerLayout;
 
 
-    public TextView showEmail;
     private GoogleApiClient googleApiClient;
 
     private ImageView photoImageView;
@@ -77,9 +86,13 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private GoogleSignInClient mGoogleSignInClient;
 
     private FirebaseUser mFirebaseUser;
-private CardView mCardView;
+    private CardView mCardView;
 
     private GoogleSignInResult result;
+    String userEmail;
+    String username;
+    String userE;
+    String usernama;
 
 
     @Override
@@ -88,16 +101,21 @@ private CardView mCardView;
 
         setContentView(R.layout.activity_home);
 
-        photoImageView = (ImageView) findViewById(R.id.imageUser);
-        nameTextView = (TextView) findViewById(R.id.NamaUserDrawer);
-        emailTextView = (TextView) findViewById(R.id.emailnavbar);
-//      final  GoogleSignInAccount account = result.getSignInAccount();
+        mAuth = FirebaseAuth.getInstance();
+
 
         setNavigationViewListener();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         toolbar.setLogo(R.drawable.napkeennlogoforhome);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
 
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -110,37 +128,11 @@ private CardView mCardView;
                 .build();
 
 
-
-
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        mAuth = FirebaseAuth.getInstance();
-        mFirebaseUser = mAuth.getCurrentUser();
-
-
-        final GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(Home.this);
-
         authListener = new FirebaseAuth.AuthStateListener() {
-
 
 
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                //get current user
-
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (account == null) {
-                    //logOutt();
-                } else if
-                        (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    // startActivity(new Intent(Home.this, LoginActivity.class));
-                    // finish();
-                } else {
-
-
-                }
 
             }
         };
@@ -177,12 +169,6 @@ private CardView mCardView;
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
 
 
         if (isOnline()) {
@@ -190,7 +176,6 @@ private CardView mCardView;
             Toast.makeText(Home.this, "You are not connected to Internet", Toast.LENGTH_SHORT).show();
         }
 
-        mAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -198,8 +183,33 @@ private CardView mCardView;
     private void setNavigationViewListener() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(this);
+        View header = navigationView.getHeaderView(0);
+        photoImageView = (ImageView) header.findViewById(R.id.imageUser);
+        emailTextView = (TextView) header.findViewById(R.id.emailnavbar);
+
+        nameTextView = (TextView) header.findViewById(R.id.NamaUserDrawer);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(Home.this);
+        if (user != null) {
+            userEmail = user.getEmail();
+            username = userEmail.substring(0, userEmail
+                    .indexOf("@"));
+            nameTextView.setText(username);
+            emailTextView.setText(userEmail);
+            photoImageView.setImageURI(user.getPhotoUrl());
+
+        } else if (account != null) {
+            nameTextView.setText(account.getDisplayName());
+            emailTextView.setText((CharSequence) account.getEmail());
+            photoImageView.setImageURI(account.getPhotoUrl());
+
+        } else {
+        }
+
 
     }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -383,11 +393,16 @@ private CardView mCardView;
         }
     }
 
-    public void toUserProfil(View v){
+    public void toUserProfil(View v) {
         Intent intent = new Intent(Home.this, UserProfil.class);
 
         startActivity(intent);
         //something TODO
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void setDataToView(FirebaseUser user) {
 
     }
 

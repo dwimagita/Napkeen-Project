@@ -1,5 +1,6 @@
 package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -279,6 +280,9 @@ public class SignupActivity extends AppCompatActivity implements GoogleApiClient
         startActivity(intent);
         finish();
     }
+
+
 }
+
 
 
