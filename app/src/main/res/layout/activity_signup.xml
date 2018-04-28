@@ -1,9 +1,14 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/colorPrimary"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -12,137 +17,136 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.SignupActivity">
 
-    <!-- Login progress -->
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:src="@drawable/napkeenn" />
 
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:src="@drawable/napkeenn" />
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/emailforsignup1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true"
-
-        >
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/emailforsignup"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/emailforsignup1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imageView3"
+            app:passwordToggleEnabled="true"
 
-            android:hint="Email" />
-    </android.support.design.widget.TextInputLayout>
+            >
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/emailforsignup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView3"
+
+                android:hint="Email" />
+        </android.support.design.widget.TextInputLayout>
 
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/passwordforsignup1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/passwordforsignup"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/passwordforsignup1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/emailforsignup"
+            app:passwordToggleEnabled="true">
 
-            android:hint="Password"
-            android:inputType="textPassword" />
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/passwordforsignup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emailforsignup"
 
-
-    <Button
-        android:id="@+id/sign_up_button"
-        style="?android:textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-
-        android:background="@color/tombolsignup"
-        android:text="@string/action_sign_up"
-        android:textColor="@color/putih"
-        android:textStyle="bold" />
+                android:hint="Password"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
 
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/sign_up_button"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
 
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Sudah punya akun ? " />
-
-    <TextView
-        android:id="@+id/masukdidaftar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:onClick="menujulogin"
-        android:text="Masuk"
-        android:textColor="@color/colorAccent" />
+            android:background="@color/tombolsignup"
+            android:text="@string/action_sign_up"
+            android:textColor="@color/putih"
+            android:textStyle="bold" />
 
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
-        android:text="Atau" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-    <View
-        android:id="@+id/garisataukanan"
-        android:layout_width="120dp"
-        android:layout_height="1dp"
-        android:layout_gravity="left"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Sudah punya akun ? " />
 
-        android:background="@android:color/darker_gray" />
+        <TextView
+            android:id="@+id/masukdidaftar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-    <View
-        android:id="@+id/garisataukiri"
-        android:layout_width="120dp"
-        android:layout_height="1dp"
-        android:layout_gravity="right"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="6dp"
-        android:background="@android:color/darker_gray" />
-
-    <com.google.android.gms.common.SignInButton
-
-        android:id="@+id/gg_signup_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-   android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:onClick="menujulogin"
+            android:text="Masuk"
+            android:textColor="@color/colorAccent" />
 
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:ems="25"
-        android:text="@string/kebijakansignup"
-        android:textAlignment="center"
-        android:textSize="8sp" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="Atau" />
 
-    <ProgressBar
-        android:id="@+id/progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/gg_signup_button"
-        android:layout_centerHorizontal="true"
-        android:foregroundGravity="center"
-        android:visibility="gone" />
-</LinearLayout>
+        <View
+            android:id="@+id/garisataukanan"
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:layout_gravity="left"
+
+            android:background="@android:color/darker_gray" />
+
+        <View
+            android:id="@+id/garisataukiri"
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:layout_gravity="right"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="6dp"
+            android:background="@android:color/darker_gray" />
+
+        <com.google.android.gms.common.SignInButton
+
+            android:id="@+id/gg_signup_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:ems="25"
+            android:text="@string/kebijakansignup"
+            android:textAlignment="center"
+            android:textSize="8sp" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gg_signup_button"
+            android:layout_centerHorizontal="true"
+            android:foregroundGravity="center"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</ScrollView>
