@@ -147,7 +147,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
         </activity>
-
         <activity
             android:name=".LocationSpinner"
             android:label="Region"
@@ -159,8 +158,16 @@
         </activity>
         <activity
             android:name=".Search"
-
             android:label="Search"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+        <activity
+            android:name=".Bantuan"
+            android:label="Bantuan"
             android:parentActivityName=".Home"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
