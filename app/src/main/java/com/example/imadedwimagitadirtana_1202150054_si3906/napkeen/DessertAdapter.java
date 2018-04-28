@@ -33,11 +33,13 @@ public class DessertAdapter extends RecyclerView.Adapter<DessertAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Post post = posts.get(position);
-        holder.RestoranPhotoName.setText(post.getPhotoTitle());
-        holder.RestoranPhotoLoc.setText(post.getPhotoDaerah());
 
-        Picasso.get().load(post.getPhoto()).into(holder.RestoranPhoto);
+        holder.DessertPhotoName.setText(post.getPhotoTitle());
+        holder.DessertPhotoLoc.setText(post.getPhotoDaerah());
+
+        Picasso.get().load(post.getPhoto()).into(holder.DessertPhoto);
     }
+
 
     @Override
     public int getItemCount() {
@@ -46,15 +48,15 @@ public class DessertAdapter extends RecyclerView.Adapter<DessertAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView  RestoranPhotoLoc, RestoranPhotoName;
-        ImageView RestoranPhoto;
+        TextView  DessertPhotoLoc, DessertPhotoName;
+        ImageView DessertPhoto;
 
         public ViewHolder(View itemView) {
             super(itemView);
             //inisialisasi
-            RestoranPhotoName = itemView.findViewById(R.id.RestoranPhotoTitle);
-            RestoranPhotoLoc = itemView.findViewById(R.id.RestoranPhotoLoc);
-            RestoranPhoto = itemView.findViewById(R.id.RestoranPhoto);
+            DessertPhotoName = itemView.findViewById(R.id.DessertPhotoTitle);
+            DessertPhotoLoc = itemView.findViewById(R.id.DessertPhotoLoc);
+            DessertPhoto = itemView.findViewById(R.id.DessertPhoto);
             itemView.setOnClickListener(this);
         }
 

@@ -245,9 +245,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 startActivity(tempatterbaik);
                 break;
             case R.id.nav_bantuan:
+                Intent bantuan = new Intent(Home.this, Bantuan.class);
+
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
                 mDrawerLayout.closeDrawers();
                 ;
+                startActivity(bantuan);
                 break;
             case R.id.nav_tentang:
                 Intent tentang = new Intent(Home.this, Tentang.class);

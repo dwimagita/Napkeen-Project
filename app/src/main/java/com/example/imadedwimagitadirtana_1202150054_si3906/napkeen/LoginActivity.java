@@ -100,6 +100,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
+
                 String email = inputEmail.getText().toString();
 
                 final String password = inputPassword.getText().toString();
@@ -117,7 +119,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+
 
                 //authenticate user
                 auth.signInWithEmailAndPassword(email, password)
@@ -166,6 +168,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
                 startActivityForResult(intent, SIGN_IN_CODE);
             }

@@ -26,6 +26,13 @@
             android:layout_gravity="center"
             android:src="@drawable/napkeenn" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone" />
+
         <android.support.design.widget.TextInputLayout
             android:id="@+id/emailforsignin1"
             android:layout_width="match_parent"
@@ -144,15 +151,6 @@
             android:layout_marginTop="20dp" />
 
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@id/google_btn"
-            android:layout_gravity="center|bottom"
-            android:foregroundGravity="center"
-            android:visibility="gone" />
-
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
@@ -162,5 +160,7 @@
             android:text="@string/kebijakansignup"
             android:textAlignment="center"
             android:textSize="8sp" />
+
+
     </LinearLayout>
 </ScrollView>

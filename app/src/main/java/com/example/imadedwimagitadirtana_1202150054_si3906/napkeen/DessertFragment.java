@@ -25,8 +25,8 @@ import java.util.List;
 public class DessertFragment extends Fragment {
 
 
-    RecyclerView RestoranRecycler;
-    RestoranAdapter adapter;
+    RecyclerView DessertRecycler;
+    DessertAdapter adapter;
     List<Post> posts;
 
     DatabaseReference databaseReference;
@@ -46,8 +46,8 @@ public class DessertFragment extends Fragment {
 
         posts = new ArrayList<>();
 
-        RestoranRecycler = view.findViewById(R.id.DessertRecycler);
-        RestoranRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        DessertRecycler = view.findViewById(R.id.DessertRecycler);
+        DessertRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
         databaseReference = FirebaseDatabase.getInstance().getReference("posts");
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -58,8 +58,8 @@ public class DessertFragment extends Fragment {
                     posts.add(post);
                 }
 
-                adapter = new RestoranAdapter(getActivity(), posts);
-                RestoranRecycler.setAdapter(adapter);
+                adapter = new DessertAdapter(getActivity(), posts);
+                DessertRecycler.setAdapter(adapter);
             }
 
             @Override

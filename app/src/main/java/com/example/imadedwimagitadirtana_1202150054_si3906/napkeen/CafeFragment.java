@@ -25,8 +25,9 @@ import java.util.List;
 public class CafeFragment extends Fragment {
 
 
-    RecyclerView RestoranRecycler;
-    RestoranAdapter adapter;
+
+    RecyclerView CafeRecycler;
+    CafeAdapter adapter;
     List<Post> posts;
 
     DatabaseReference databaseReference;
@@ -46,8 +47,8 @@ public class CafeFragment extends Fragment {
 
         posts = new ArrayList<>();
 
-        RestoranRecycler = view.findViewById(R.id.CafeRecycler);
-        RestoranRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        CafeRecycler = view.findViewById(R.id.CafeRecycler);
+        CafeRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
         databaseReference = FirebaseDatabase.getInstance().getReference("posts");
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -58,8 +59,8 @@ public class CafeFragment extends Fragment {
                     posts.add(post);
                 }
 
-                adapter = new RestoranAdapter(getActivity(), posts);
-                RestoranRecycler.setAdapter(adapter);
+                adapter = new CafeAdapter(getActivity(), posts);
+                CafeRecycler.setAdapter(adapter);
             }
 
             @Override
