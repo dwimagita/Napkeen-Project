@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
+    android:background="#70d3d3d3"
+
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.DessertFragment">
 
     <TextView
