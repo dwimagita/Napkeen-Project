@@ -12,7 +12,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#50d3d3d3"
+        android:background="#35d3d3d3"
 
         >
 
@@ -31,7 +31,10 @@
             android:layout_height="20dp"
             android:layout_alignEnd="@+id/CafePhoto"
             app:layout_constraintEnd_toEndOf="@+id/CafePhoto"
-            android:src="@drawable/ic_starrating" />
+            android:src="@drawable/ic_starrating"
+            android:background="#058b32"
+
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -39,7 +42,8 @@
             app:layout_constraintEnd_toStartOf="@+id/starrating"
             android:layout_alignTop="@+id/CafePhoto"
             android:text="3.2"
-            android:background="#50FFFFFF"
+            android:textColor="#000000"
+            android:background="#058b32"
 
             />
 
