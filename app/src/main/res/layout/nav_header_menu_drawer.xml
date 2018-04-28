@@ -7,19 +7,18 @@
     android:background="#FF9052"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:theme="@style/AppTheme.NoActionBar">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="25dp">
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        >
 
         <ImageView
             android:layout_width="109dp"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             app:srcCompat="@drawable/napkeenn" />
 
 
@@ -29,25 +28,52 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#ffffff" />
+        android:background="#000000"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"
+        />
 
 
 
-    <RelativeLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:onClick="toUserProfil"
         android:clickable="true"
         android:background="#FF9052"
 
         >
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF9052"
+    android:onClick="toUserProfil"
+
+    android:clickable="true"
+    >
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/imageUser"
+        android:layout_alignEnd="@+id/NamaUserDrawer"
+
+        android:layout_gravity="end"
+        android:src="@drawable/ic_kanan" />
         <ImageView
             android:id="@+id/imageUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@mipmap/ic_launcher_round"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:visibility="visible"
+
+            />
 
         <TextView
             android:id="@+id/NamaUserDrawer"
@@ -55,8 +81,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/imageUser"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
             android:text="Android Studio"
-
             />
 
         <TextView
@@ -64,8 +91,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/NamaUserDrawer"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
             android:text="android.studio@android.com" />
-
-    </RelativeLayout>
+</RelativeLayout>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="#FFEAC6"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.Home"
@@ -19,7 +18,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="#FFEAC6"
 
     >
 
@@ -61,7 +59,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header_menu_drawer"
         app:menu="@menu/activity_menu_drawer_drawer"
-        android:background="#FFEAC6"
 
         />
 

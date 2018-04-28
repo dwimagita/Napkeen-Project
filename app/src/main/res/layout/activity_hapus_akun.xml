@@ -29,8 +29,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
-                android:text="Anda akan menghapus akun anda" />
+                android:text="Anda akan menghapus akun anda!"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -38,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
 
-                android:text="Semua data pada akun ini(profil, komentar dan foto)akan secara permanent terhapus dalam waktu 30 hari. Tindakan ini tidak dapat diubah."
+                android:text="Dengan menghapus akun maka semua data anda akan terhapus dari aplikasi ini dan tidak akan bisa dilakukan pembatalan"
                 android:textAlignment="center" />
 
             <Button
@@ -57,11 +58,13 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="Kembali ke Pengaturan" />
+
             <ProgressBar
+                android:id="@+id/progressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:id="@+id/progressBar"
+                android:visibility="gone"
                 />
         </LinearLayout>
 

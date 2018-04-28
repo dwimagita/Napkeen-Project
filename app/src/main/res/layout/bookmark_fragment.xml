@@ -4,28 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="#70d3d3d3"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.RestoranFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Restoran"
-        android:layout_marginBottom="5dp"
-        />
-
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000000" />
-
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/RestoranRecycler"
+        android:id="@+id/bookmarkRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-
         >
 
     </android.support.v7.widget.RecyclerView>
