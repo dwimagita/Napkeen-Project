@@ -245,9 +245,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 startActivity(tempatterbaik);
                 break;
             case R.id.nav_bantuan:
+                Intent bantuan = new Intent(Home.this, Bantuan.class);
+
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
                 mDrawerLayout.closeDrawers();
                 ;
+                startActivity(bantuan);
                 break;
             case R.id.nav_tentang:
                 Intent tentang = new Intent(Home.this, Tentang.class);
@@ -301,19 +304,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
-        MenuItem item = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) item.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
+        MenuItem item = menu.findItem(R.id.action_search);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -393,10 +385,28 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Intent intent = new Intent(this, Search.class);
+                this.startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
     public void toUserProfil(View v) {
         Intent intent = new Intent(Home.this, UserProfil.class);
 
         startActivity(intent);
+        //something TODO
+
+    }
+    public void toSearch(View v) {
+        Intent search = new Intent(Home.this, Search.class);
+
+        startActivity(search);
         //something TODO
 
     }

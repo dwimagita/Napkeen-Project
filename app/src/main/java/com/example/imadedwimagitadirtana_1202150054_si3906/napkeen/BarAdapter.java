@@ -33,10 +33,10 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Post post = posts.get(position);
-        holder.RestoranPhotoName.setText(post.getPhotoTitle());
-        holder.RestoranPhotoLoc.setText(post.getPhotoDaerah());
+        holder.BarPhotoName.setText(post.getPhotoTitle());
+        holder.BarPhotoLoc.setText(post.getPhotoDaerah());
 
-        Picasso.get().load(post.getPhoto()).into(holder.RestoranPhoto);
+        Picasso.get().load(post.getPhoto()).into(holder.BarPhoto);
     }
 
     @Override
@@ -46,15 +46,15 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView  RestoranPhotoLoc, RestoranPhotoName;
-        ImageView RestoranPhoto;
+        TextView  BarPhotoLoc, BarPhotoName;
+        ImageView BarPhoto;
 
         public ViewHolder(View itemView) {
             super(itemView);
             //inisialisasi
-            RestoranPhotoName = itemView.findViewById(R.id.RestoranPhotoTitle);
-            RestoranPhotoLoc = itemView.findViewById(R.id.RestoranPhotoLoc);
-            RestoranPhoto = itemView.findViewById(R.id.RestoranPhoto);
+            BarPhotoName = itemView.findViewById(R.id.BarPhotoTitle);
+            BarPhotoLoc = itemView.findViewById(R.id.BarPhotoLoc);
+            BarPhoto = itemView.findViewById(R.id.BarPhoto);
             itemView.setOnClickListener(this);
         }
 

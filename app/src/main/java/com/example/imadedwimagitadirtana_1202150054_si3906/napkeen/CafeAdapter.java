@@ -33,10 +33,10 @@ public class CafeAdapter extends RecyclerView.Adapter<CafeAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Post post = posts.get(position);
-        holder.RestoranPhotoName.setText(post.getPhotoTitle());
-        holder.RestoranPhotoLoc.setText(post.getPhotoDaerah());
+        holder.CafePhotoName.setText(post.getPhotoTitle());
+        holder.CafePhotoLoc.setText(post.getPhotoDaerah());
 
-        Picasso.get().load(post.getPhoto()).into(holder.RestoranPhoto);
+        Picasso.get().load(post.getPhoto()).into(holder.CafePhoto);
     }
 
     @Override
@@ -46,15 +46,15 @@ public class CafeAdapter extends RecyclerView.Adapter<CafeAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView  RestoranPhotoLoc, RestoranPhotoName;
-        ImageView RestoranPhoto;
+        TextView CafePhotoLoc, CafePhotoName;
+        ImageView CafePhoto;
 
         public ViewHolder(View itemView) {
             super(itemView);
             //inisialisasi
-            RestoranPhotoName = itemView.findViewById(R.id.RestoranPhotoTitle);
-            RestoranPhotoLoc = itemView.findViewById(R.id.RestoranPhotoLoc);
-            RestoranPhoto = itemView.findViewById(R.id.RestoranPhoto);
+            CafePhotoName = itemView.findViewById(R.id.CafePhotoTitle);
+            CafePhotoLoc = itemView.findViewById(R.id.CafePhotoLoc);
+            CafePhoto = itemView.findViewById(R.id.CafePhoto);
             itemView.setOnClickListener(this);
         }
 

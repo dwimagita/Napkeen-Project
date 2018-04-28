@@ -16,16 +16,16 @@
             android:id="@+id/starrating"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_alignEnd="@+id/RestoranPhoto"
-            app:layout_constraintEnd_toEndOf="@+id/RestoranPhoto"
+            android:layout_alignEnd="@+id/CafePhoto"
+            app:layout_constraintEnd_toEndOf="@+id/CafePhoto"
             android:src="@drawable/ic_starrating"
-            android:layout_alignRight="@+id/RestoranPhoto" />
+            android:layout_alignRight="@+id/CafePhoto" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:id="@+id/score_rating_detail"
             app:layout_constraintEnd_toStartOf="@+id/starrating"
-            android:layout_alignTop="@+id/RestoranPhoto"
+            android:layout_alignTop="@+id/CafePhoto"
             android:text="3.2"
             />
 
