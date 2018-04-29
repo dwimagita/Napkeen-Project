@@ -198,31 +198,32 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(Home.this);
         if (user != null) {
-            userEmail = user.getEmail();
-            username = userEmail.substring(0, userEmail
+           userEmail = user.getEmail();
+           username = userEmail.substring(0, userEmail
                     .indexOf("@"));
-            if (user.getDisplayName() != null) {
-                nameTextView.setText(user.getDisplayName());
-            } else {
-                nameTextView.setText(username);
-            }
+
+           if(user.getDisplayName()!=null){
+               nameTextView.setText(user.getDisplayName());
+           }else if (user.getDisplayName()==null){
+               nameTextView.setText(username);
+           }
+            emailTextView.setText(userEmail);
             photoImageView.setImageURI(user.getPhotoUrl());
 
         } else if (account != null) {
             nameTextView.setText(account.getDisplayName());
+            emailTextView.setText((CharSequence) account.getEmail());
             photoImageView.setImageURI(account.getPhotoUrl());
+
         } else {
             nameTextView.setText(user.getDisplayName());
             photoImageView.setImageURI(user.getPhotoUrl());
-
         }
-    }
+        }
 
 
 
-
-
-        @Override
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
