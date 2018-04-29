@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollViewdetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:theme="@style/AppTheme.NoActionBar"
     tools:context="com.example.imadedwimagitadirtana_1202150054_si3906.napkeen.TambahRestoran">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_tambahrestoran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF9052"
+        />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        >
+
 
         <EditText
             android:id="@+id/EdtTextnamarestoran"
@@ -24,7 +36,8 @@
             android:fontFamily="casual"
             android:hint="@string/prompt_nama_restoran"
             android:inputType="text"
-            android:singleLine="true" />
+            android:singleLine="true"
+            />
 
         <TextView
             android:id="@+id/textViewdaerah"
@@ -64,7 +77,9 @@
             android:fontFamily="casual"
             android:text="Nama Restoran"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="5dp" />
+            tools:layout_editor_absoluteY="5dp"
+            android:layout_below="@+id/toolbar_tambahrestoran"
+            />
 
         <TextView
             android:id="@+id/textViewkotarestoran"
@@ -205,12 +220,12 @@
             android:layout_height="34dp"
             android:layout_below="@id/buttonChoose"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:background="@color/tombolsignup"
             android:fontFamily="casual"
             android:text="@string/action_sign_up"
             android:textColor="@color/putih"
-
+android:layout_marginBottom="30dp"
             android:textStyle="bold" />
 
 
@@ -230,11 +245,11 @@
             android:layout_centerHorizontal="true"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Choose"
 
             />
     </RelativeLayout>
-
+</LinearLayout>
 </ScrollView>
 

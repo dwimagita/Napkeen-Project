@@ -96,6 +96,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -170,11 +175,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
 
-
         if (isOnline()) {
         } else {
             Toast.makeText(Home.this, "You are not connected to Internet", Toast.LENGTH_SHORT).show();
+
         }
+
 
 
     }
@@ -195,23 +201,28 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             userEmail = user.getEmail();
             username = userEmail.substring(0, userEmail
                     .indexOf("@"));
-            nameTextView.setText(username);
-            emailTextView.setText(userEmail);
+            if (user.getDisplayName() != null) {
+                nameTextView.setText(user.getDisplayName());
+            } else {
+                nameTextView.setText(username);
+            }
             photoImageView.setImageURI(user.getPhotoUrl());
 
         } else if (account != null) {
             nameTextView.setText(account.getDisplayName());
-            emailTextView.setText((CharSequence) account.getEmail());
             photoImageView.setImageURI(account.getPhotoUrl());
-
         } else {
+            nameTextView.setText(user.getDisplayName());
+            photoImageView.setImageURI(user.getPhotoUrl());
+
         }
-
-
     }
 
 
-    @Override
+
+
+
+        @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
@@ -221,7 +232,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 ;
                 break;
             case R.id.nav_nearby:
-                Intent t = new Intent(Home.this, TempatMakanTerdekat.class);
+                Intent t = new Intent(Home.this,TempatMakanTerdekat.class);
 
                 mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
                 mDrawerLayout.closeDrawers();
@@ -325,6 +336,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     protected void onResume() {
         super.onResume();
 
+
     }
 
     @Override
@@ -349,6 +361,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     public void onStop() {
         super.onStop();
+
         if (authListener != null) {
             mAuth.removeAuthStateListener(authListener);
         }

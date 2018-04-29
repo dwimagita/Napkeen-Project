@@ -82,7 +82,8 @@
         <activity
             android:name=".TambahRestoran"
             android:label="Tambah Restoran"
-            android:parentActivityName=".Home">
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
@@ -123,7 +124,8 @@
         <activity
             android:name=".UserProfil"
             android:label="Profil"
-            android:parentActivityName=".Home">
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
@@ -181,6 +183,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home" />
+        </activity>
+        <activity
+            android:name=".GantiNama"
+            android:parentActivityName=".UserProfil"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserProfil" />
         </activity>
     </application>
 
