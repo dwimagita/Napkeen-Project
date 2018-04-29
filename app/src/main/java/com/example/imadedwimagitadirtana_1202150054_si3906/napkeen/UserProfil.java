@@ -9,6 +9,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +47,12 @@ public class UserProfil extends AppCompatActivity implements GoogleApiClient.OnC
         name = (TextView) findViewById(R.id.namauserprofile);
         imageView = (ImageView) findViewById(R.id.fotoprofil);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_profil);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.ic_profil);
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -63,14 +71,22 @@ public class UserProfil extends AppCompatActivity implements GoogleApiClient.OnC
             userEmail = user.getEmail();
             username = userEmail.substring(0, userEmail
                     .indexOf("@"));
-            name.setText(username);
+            if(user.getDisplayName()!=null){
+                name.setText(user.getDisplayName());
+            }else {
+                name.setText(username);
+            }
             imageView.setImageURI(user.getPhotoUrl());
 
         } else if (account != null) {
             name.setText(account.getDisplayName());
             imageView.setImageURI(account.getPhotoUrl());
+        }else {
+            name.setText(user.getDisplayName());
+            imageView.setImageURI(user.getPhotoUrl());
 
         }
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_star).setText("Bookmark"));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_post).setText("Your Post"));
@@ -132,6 +148,13 @@ public class UserProfil extends AppCompatActivity implements GoogleApiClient.OnC
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+    public void menujueditnama(View v) {
+        Intent edtnama = new Intent(UserProfil.this, GantiNama.class);
+
+        startActivity(edtnama);
+        //something TODO
 
     }
 }
