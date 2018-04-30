@@ -7,9 +7,9 @@
     <string name="sudah_memiliki_akun">Sudah memiliki akun?</string>
     <string name="belum_memiliki_akun">Belum memiliki akun?</string>
     <string name="masuk">masuk</string>
-    <string name="daftar_disini">Daftar disini</string>
+    <string name="daftar_disini">Daftar</string>
 
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">Masuk</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -19,7 +19,7 @@
     <string name="kotarestoran">Kota Restoran</string>
     <string name="nomorteleponrestoran">Nomor Telepon</string>
     <string name="action_sign_up">Daftar</string>
-    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_in_short">Sign</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
@@ -50,7 +50,6 @@
     <string name="email">Email</string>
 
 
-
     <string name="title_activity_signup">Daftar</string>
     <string name="action_sign_in">Sign In</string>
     <string name="email_signup">Email</string>
@@ -62,5 +61,19 @@
 
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="deskripsi_napkeen_tentang">Napkeen membantu anda menemukan tempat makan yang ingin anda kunjungi di sekitar Bandung. Napkeen membantumu mencari tahu info tentang tempat makan yang kamu sukai dan tempat makan rekomendasi dari user lainnya. Temukan tempat makan favoritmu disini!</string>
 
+    <string-array name="spinner_location">
+        <item>Sukapura</item>
+        <item>Sukabirus</item>
+        <item>Mengger Hilir</item>
+        <item>Ciganitri</item>
+        <item>Lengkong</item>
+        <item>Babakan Radio</item>
+        <item>PGA</item>
+        <item>Cikoneng</item>
+        <item>Cijagra</item>
+        <item>Radio Palasari</item>
+        <item>Adhyaksa</item>
+    </string-array>
 </resources>

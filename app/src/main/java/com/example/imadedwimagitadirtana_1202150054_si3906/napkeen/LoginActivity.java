@@ -1,12 +1,17 @@
 package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,9 +21,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
@@ -33,33 +36,28 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 
-public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
+public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
-    private static final String TAG = "log" ;
+    private static final String TAG = "log";
     private GoogleApiClient googleApiClient;
 
     private SignInButton signInButton;
 
     public static final int SIGN_IN_CODE = 777;
 
-    private EditText inputEmail, inputPassword;
+    private EditText email;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
-
-    private Button  btnLogin, btnReset;
-    private GoogleSignInClient mGoogleSignInClient;
-
+    private TextInputEditText inputPassword, inputEmail;
+    private Button btnLogin;
+    private String valid_email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-
         signInButton = (SignInButton) findViewById(R.id.google_btn);
-
-
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -70,28 +68,45 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         }
 
 
-        inputEmail = (EditText) findViewById(R.id.email);
+        inputEmail = (TextInputEditText) findViewById(R.id.emailforsignin);
 
-        inputPassword = (EditText) findViewById(R.id.password);
+        inputPassword = (TextInputEditText) findViewById(R.id.password);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         btnLogin = (Button) findViewById(R.id.btn_login);
+//checkbox = (CheckBox) findViewById(R.id.checkBoxsignin);
+        FirebaseUser user = auth.getCurrentUser();
+
+        if (user != null) {
+            String currentUserID = user.getUid();
+            // Use currentUserID
+        }
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-
-
-
+        initilizeUI();
+        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                if (firebaseUser != null) {
+                    String userId = firebaseUser.getUid();
+                    String userEmail = firebaseUser.getEmail();
+                }
+            }
+        };
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
+
                 String email = inputEmail.getText().toString();
 
                 final String password = inputPassword.getText().toString();
-                if(isOnline()){
-                }else{
+                if (isOnline()) {
+                } else {
                     Toast.makeText(LoginActivity.this, "You are not connected to Internet", Toast.LENGTH_SHORT).show();
                 }
                 if (TextUtils.isEmpty(email)) {
@@ -104,7 +119,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+
 
                 //authenticate user
                 auth.signInWithEmailAndPassword(email, password)
@@ -120,7 +135,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                                     // there was an error
                                     if (password.length() < 6) {
                                         inputPassword.setError(getString(R.string.minimum_password));
-                                    }else {
+                                    } else {
                                         Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
@@ -134,8 +149,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         });
 
 
-        if(isOnline()){
-        }else{
+        if (isOnline()) {
+        } else {
             Toast.makeText(LoginActivity.this, "You are not connected to Internet", Toast.LENGTH_SHORT).show();
         }
 
@@ -153,23 +168,73 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
                 startActivityForResult(intent, SIGN_IN_CODE);
             }
         });
-
     }
-    public void menujusignup (View view) {
+
+    private void initilizeUI() {
+        // TODO Auto-generated method stub
+
+        email = (TextInputEditText) findViewById(R.id.emailforsignin);
+
+        email.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+
+                // TODO Auto-generated method stub
+                Is_Valid_Email(email); // pass your EditText Obj here.
+            }
+
+            public void Is_Valid_Email(EditText edt) {
+                if (edt.getText().toString() == null) {
+                    edt.setError("Invalid Email Address");
+                    valid_email = null;
+                } else if (isEmailValid(edt.getText().toString()) == false) {
+                    edt.setError("Invalid Email Address");
+                    valid_email = null;
+                } else {
+                    valid_email = edt.getText().toString();
+                }
+            }
+
+            boolean isEmailValid(CharSequence email) {
+                return android.util.Patterns.EMAIL_ADDRESS.matcher(email)
+                        .matches();
+            } // end of TextWatcher (email)
+        });
+    }
+
+    public void menujusignup(View view) {
         Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
         startActivity(intent);
     }
-    public void menujuresetpassword (View view) {
+
+    public void menujuresetpassword(View view) {
         Intent intent = new Intent(LoginActivity.this, ResetPassword.class);
         startActivity(intent);
     }
 
     public boolean isOnline() {
-        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         if (netInfo != null && netInfo.isConnectedOrConnecting()) {
             return true;
@@ -232,17 +297,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
 
-
     private void goMainScreen() {
         Intent intent = new Intent(LoginActivity.this, Home.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        //startActivityForResult(signInIntent, SIGN_IN_CODE);
+
         startActivity(intent);
         finish();
     }
-
-
-
 
 }
