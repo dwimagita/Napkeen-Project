@@ -56,7 +56,9 @@ public class CafeFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Post post = snapshot.getValue(Post.class);
-                    posts.add(post);
+                    if ( post.getPhotoJenis().equals("Cafe") ) {
+                        posts.add(post);
+                    }
                 }
 
                 adapter = new CafeAdapter(getActivity(), posts);

@@ -13,8 +13,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,13 +47,22 @@ public class TambahRestoran extends AppCompatActivity {
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
     private Uri filePath;
-
+    private RadioGroup jenistempat;
+    private RadioButton restoran;
+    private RadioButton bar;
+    private RadioButton cafe;
+    private RadioButton dessert;
+    private RadioButton radio;
     FirebaseUser user;
     // dari firebase
     String userEmail;
 
     // yang bakal dikirim
-    String username, title, alamat, telepon, informasi, daerah, buka, harga;
+    String username, title, alamat, telepon, informasi, daerah, buka, harga, jenis;
+    private int PLACE_PICKER_REQUEST = 1;
+
+    private Button btPlacesAPI;
+    private TextView tvPlaceAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +78,8 @@ public class TambahRestoran extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference();
         storageReference = FirebaseStorage.getInstance().getReference();
         FirebaseDatabase.getInstance().getReference("app_title").setValue("Napkeen");
-
+        tvPlaceAPI = (TextView) findViewById(R.id.alamatlokasi);
+        btPlacesAPI = (Button) findViewById(R.id.buttonlokasi);
         postTitle = findViewById(R.id.EdtTextnamarestoran);
         postAlamat = findViewById(R.id.EdtTextAlamatRestoran);
         postTelepon = findViewById(R.id.EdtTextTelponRestoran);
@@ -71,6 +88,11 @@ public class TambahRestoran extends AppCompatActivity {
         postDaerah = findViewById(R.id.EdtTextDaerah);
         postHarga = findViewById(R.id.EdtTextharga);
         postPhoto = findViewById(R.id.postPhoto);
+restoran = (RadioButton) findViewById(R.id.restoran);
+        bar = (RadioButton) findViewById(R.id.bar);
+        cafe = (RadioButton) findViewById(R.id.cafe);
+        dessert = (RadioButton) findViewById(R.id.dessert);
+
 
         btnChoose = findViewById(R.id.buttonChoose);
         btndaftar = findViewById(R.id.tomboldaftar);
@@ -78,6 +100,28 @@ public class TambahRestoran extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         userEmail = user.getEmail();
         username = userEmail.substring(0, userEmail.indexOf("@"));
+
+        btPlacesAPI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // membuat Intent untuk Place Picker
+
+                PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+                try {
+                    //menjalankan place picker
+
+                    startActivityForResult(builder.build(TambahRestoran.this), PLACE_PICKER_REQUEST);
+
+                    // check apabila <a title="Solusi Tidak Bisa Download Google Play Services di Android" href="http://www.twoh.co/2014/11/solusi-tidak-bisa-download-google-play-services-di-android/" target="_blank">Google Play Services tidak terinstall</a> di HP
+                } catch (GooglePlayServicesRepairableException e) {
+                    e.printStackTrace();
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
 
         btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,16 +137,22 @@ public class TambahRestoran extends AppCompatActivity {
         btndaftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 uploadPost();
             }
         });
+
+
     }
+
 
     private void uploadPost() {
         if (filePath != null) {
             final ProgressDialog progressDialog = new ProgressDialog(TambahRestoran.this);
             progressDialog.setTitle("Upload Post");
             progressDialog.show();
+
+            final String tujuan = tvPlaceAPI.getText().toString().trim();
 
             title = postTitle.getText().toString();
             alamat = postAlamat.getText().toString();
@@ -112,9 +162,19 @@ public class TambahRestoran extends AppCompatActivity {
             telepon = postTelepon.getText().toString();
             harga = postHarga.getText().toString();
 
+            final     RadioGroup radio = (RadioGroup)findViewById(R.id.radiogroupjenistempat);
+
+            final int selectedRadioButtonID = radio.getCheckedRadioButtonId();
+
+            final  RadioButton selectedRadioButton = (RadioButton) findViewById(selectedRadioButtonID);
+
+            final   String selectedRadioButtonText = selectedRadioButton.getText().toString();
+
+
 
             // database
             final DatabaseReference database = FirebaseDatabase.getInstance().getReference("posts");
+            String id = database.push().getKey();
 
             // storage
             StorageReference riversRef = storageReference.child("image").child(filePath.getLastPathSegment());
@@ -136,8 +196,8 @@ public class TambahRestoran extends AppCompatActivity {
                             post.setPhotoInformasi(informasi);
                             post.setPhotoBuka(buka);
                             post.setPhotoharga(harga);
-
-
+                            post.setPhotoLokasi(tujuan);
+                            post.setPhotoJenis(selectedRadioButtonText);
                             database.child(postId).setValue(post);
                             progressDialog.dismiss();
 
@@ -174,6 +234,17 @@ public class TambahRestoran extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PLACE_PICKER_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlacePicker.getPlace(TambahRestoran.this, data);
+                String toastMsg = String.format(
+                        "Place: %s \n" +
+                                "Alamat: %s \n" +
+                                "Latlng %s \n", place.getName(), place.getAddress(), place.getLatLng().latitude + " " + place.getLatLng().longitude);
+                tvPlaceAPI.setText(toastMsg);
+            }
+        }
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             filePath = data.getData();
             try {
@@ -184,5 +255,17 @@ public class TambahRestoran extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+
     }
 }

@@ -55,7 +55,9 @@ public class BarFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Post post = snapshot.getValue(Post.class);
-                    posts.add(post);
+                    if ( post.getPhotoJenis().equals("Bar") ) {
+                        posts.add(post);
+                    }
                 }
 
                 adapter = new BarAdapter(getActivity(), posts);

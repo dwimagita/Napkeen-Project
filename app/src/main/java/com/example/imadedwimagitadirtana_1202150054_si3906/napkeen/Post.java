@@ -12,6 +12,8 @@ public class Post {
     private String photoTelepon;
     private String photoInformasi;
     private String photoBuka;
+    private String photoLokasi;
+    private String photoJenis;
 
     public String getPostId() {
         return postId;
@@ -91,5 +93,18 @@ public class Post {
 
     public void setPhotoDaerah(String photoDaerah) {
         this.photoDaerah = photoDaerah;
+    }
+
+    public String getPhotoLokasi(){
+        return photoLokasi;
+    }
+    public void setPhotoLokasi(String photoLokasi) {
+        this.photoLokasi = photoLokasi;
+    }
+    public String getPhotoJenis(){
+        return photoJenis;
+    }
+    public void setPhotoJenis(String photoJenis) {
+        this.photoJenis = photoJenis;
     }
 }

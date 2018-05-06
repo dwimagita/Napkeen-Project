@@ -1,5 +1,6 @@
 package com.example.imadedwimagitadirtana_1202150054_si3906.napkeen;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
@@ -59,7 +60,11 @@ public class GantiNama extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     Log.d(TAG, "User profile updated.");
-                                    Toast.makeText(GantiNama.this, "udah ganti nama", Toast.LENGTH_SHORT).show(); }
+                                    Toast.makeText(GantiNama.this, "udah ganti nama", Toast.LENGTH_SHORT).show();
+                                    Intent profil = new Intent (GantiNama.this , UserProfil.class);
+                                    startActivity(profil);
+
+                                }
                             }
                         });
             }
