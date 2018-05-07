@@ -18,13 +18,22 @@
             android:background="#FF9052"
 
             />
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            tools:context="mobivision.kajiapps.DetailActivity"
+            android:layout_below="@id/Detaillokasi"
 
+            />
         <RelativeLayout
             android:id="@+id/relative"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_below="@id/toolbar_detail"
-            android:background="#99FFEAC6">
+            android:background="#99FFEAC6"
+            >
 
             <ImageView
                 android:id="@+id/detailphoto"
@@ -51,15 +60,7 @@
         </RelativeLayout>
 
 
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_below="@id/Detaillokasi"
 
-            android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
-            android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/DetailNamaRestoran"
@@ -142,8 +143,8 @@
             android:id="@+id/telepon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/mapView"
-            android:layout_below="@+id/mapView"
+            android:layout_alignStart="@+id/map"
+            android:layout_below="@+id/map"
             android:layout_marginTop="19dp"
             android:text="Telepon" />
 
@@ -161,7 +162,7 @@
             android:id="@+id/harga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@id/mapView"
+            android:layout_alignStart="@id/map"
             android:layout_below="@+id/noTelepon"
             android:layout_marginTop="19dp"
             android:text="Harga" />
@@ -180,8 +181,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/noTelepon"
-            android:layout_alignEnd="@+id/mapView"
-            android:layout_alignRight="@+id/mapView"
+            android:layout_alignEnd="@+id/map"
+            android:layout_alignRight="@+id/map"
             android:text="Informasi Tambahan" />
 
         <TextView

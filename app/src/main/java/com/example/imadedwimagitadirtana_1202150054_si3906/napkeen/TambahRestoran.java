@@ -47,12 +47,7 @@ public class TambahRestoran extends AppCompatActivity {
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
     private Uri filePath;
-    private RadioGroup jenistempat;
-    private RadioButton restoran;
-    private RadioButton bar;
-    private RadioButton cafe;
-    private RadioButton dessert;
-    private RadioButton radio;
+
     FirebaseUser user;
     // dari firebase
     String userEmail;
@@ -88,10 +83,6 @@ public class TambahRestoran extends AppCompatActivity {
         postDaerah = findViewById(R.id.EdtTextDaerah);
         postHarga = findViewById(R.id.EdtTextharga);
         postPhoto = findViewById(R.id.postPhoto);
-restoran = (RadioButton) findViewById(R.id.restoran);
-        bar = (RadioButton) findViewById(R.id.bar);
-        cafe = (RadioButton) findViewById(R.id.cafe);
-        dessert = (RadioButton) findViewById(R.id.dessert);
 
 
         btnChoose = findViewById(R.id.buttonChoose);
@@ -152,7 +143,7 @@ restoran = (RadioButton) findViewById(R.id.restoran);
             progressDialog.setTitle("Upload Post");
             progressDialog.show();
 
-            final String tujuan = tvPlaceAPI.getText().toString().trim();
+            final String lokasi = tvPlaceAPI.getText().toString().trim();
 
             title = postTitle.getText().toString();
             alamat = postAlamat.getText().toString();
@@ -196,7 +187,7 @@ restoran = (RadioButton) findViewById(R.id.restoran);
                             post.setPhotoInformasi(informasi);
                             post.setPhotoBuka(buka);
                             post.setPhotoharga(harga);
-                            post.setPhotoLokasi(tujuan);
+                            post.setPhotoLokasi(lokasi);
                             post.setPhotoJenis(selectedRadioButtonText);
                             database.child(postId).setValue(post);
                             progressDialog.dismiss();
@@ -242,6 +233,7 @@ restoran = (RadioButton) findViewById(R.id.restoran);
                         "Place: %s \n" +
                                 "Alamat: %s \n" +
                                 "Latlng %s \n", place.getName(), place.getAddress(), place.getLatLng().latitude + " " + place.getLatLng().longitude);
+
                 tvPlaceAPI.setText(toastMsg);
             }
         }

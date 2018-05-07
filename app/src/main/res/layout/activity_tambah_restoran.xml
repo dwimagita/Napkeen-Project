@@ -127,7 +127,7 @@
                 android:layout_below="@+id/textViewharga"
                 android:fontFamily="casual"
                 android:hint="range harga (ex: Rp 10.000-30.000)"
-                android:inputType="number"
+                android:inputType="phone"
                 />
 
             <TextView
@@ -165,7 +165,7 @@
                 android:layout_below="@+id/textViewwaktubuka"
                 android:fontFamily="casual"
                 android:hint="Waktu buka (ex: 9.00 - 22.00)"
-                android:inputType="number"
+                android:inputType="phone"
 
                 />
 
