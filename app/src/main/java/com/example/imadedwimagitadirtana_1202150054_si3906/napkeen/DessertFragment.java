@@ -55,7 +55,9 @@ public class DessertFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Post post = snapshot.getValue(Post.class);
-                    posts.add(post);
+                    if ( post.getPhotoJenis().equals("Dessert") ) {
+                        posts.add(post);
+                    }
                 }
 
                 adapter = new DessertAdapter(getActivity(), posts);

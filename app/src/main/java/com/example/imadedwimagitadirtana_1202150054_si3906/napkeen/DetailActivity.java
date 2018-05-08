@@ -12,6 +12,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,9 +31,9 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity implements OnMapReadyCallback {
     //inisialisasi
-    TextView  detailnamarestoran, detailalamat, detailbuka,detaildaerah,detailharga, detailinformasi, detailtelepon ;
+    TextView detailnamarestoran, detailalamat, detailbuka, detaildaerah, detailharga, detailinformasi, detailtelepon, detailmaps;
     ImageView detailPhoto;
     EditText detailComment;
     Button buttonComment;
@@ -38,6 +45,7 @@ public class DetailActivity extends AppCompatActivity {
     DatabaseReference database;
     String username = "", postId = "";
     String message = "";
+    private GoogleMap mMap;
 
     FirebaseUser user;
     // dari firebase
@@ -55,6 +63,7 @@ public class DetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Detail");
 
+        //untuk menambahkan tabel baru pada firebase untuk comment
         database = FirebaseDatabase.getInstance().getReference("comments");
 
         referencing();
@@ -71,11 +80,12 @@ public class DetailActivity extends AppCompatActivity {
             detailinformasi.setText(getIntent().getStringExtra("informasi"));
             detailharga.setText(getIntent().getStringExtra("harga"));
             detaildaerah.setText(getIntent().getStringExtra("daerah"));
-
             postId = getIntent().getStringExtra("id");
 
             Picasso.get().load(getIntent().getStringExtra("photo")).into(detailPhoto);
         }
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 //array data comment
         comments = new ArrayList<>();
 
@@ -102,7 +112,6 @@ public class DetailActivity extends AppCompatActivity {
         detailbuka = findViewById(R.id.DetailWaktubuka);
         detaildaerah = findViewById(R.id.DetailDaerahRestoran);
         detailtelepon = findViewById(R.id.noTelepon);
-
 
         detailComment = findViewById(R.id.detailComment);
         buttonComment = findViewById(R.id.buttonPostComment);
@@ -139,6 +148,7 @@ public class DetailActivity extends AppCompatActivity {
 
         DatabaseReference databaseReference;
         CommentAdapter adapter;
+
         //untuk mendapatkan data dari database yang dilakukan pada background task
         @Override
         protected Void doInBackground(Void... voids) {
@@ -158,6 +168,7 @@ public class DetailActivity extends AppCompatActivity {
                     adapter = new CommentAdapter(DetailActivity.this, comments);
                     recyclerComment.setAdapter(adapter);
                 }
+
                 //jika database error
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
@@ -167,4 +178,13 @@ public class DetailActivity extends AppCompatActivity {
             return null;
         }
     }
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-6.9078961, 107.6275705);
+        mMap.addMarker(new MarkerOptions().position(sydney).title(""));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 45));
+    }
+
 }

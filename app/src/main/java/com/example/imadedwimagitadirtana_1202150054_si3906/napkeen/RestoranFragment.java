@@ -59,12 +59,13 @@ public class RestoranFragment extends Fragment {
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Post post = snapshot.getValue(Post.class);
-                    posts.add(post);
+                    if ( post.getPhotoJenis().equals("Restoran") ) {
+                        posts.add(post);
+                    }
                 }
 
                 adapter = new RestoranAdapter(getActivity(), posts);
                 RestoranRecycler.setAdapter(adapter);
-
             }
 
             @Override
