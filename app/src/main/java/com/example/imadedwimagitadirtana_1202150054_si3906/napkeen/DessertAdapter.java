@@ -72,6 +72,7 @@ public class DessertAdapter extends RecyclerView.Adapter<DessertAdapter.ViewHold
             String informasi = post.getPhotoInformasi();
             String daerah = post.getPhotoDaerah();
             String buka = post.getPhotoBuka();
+            String lokasi = post.getPhotoLokasi();
 
 
             String photoUrl = post.getPhoto();
@@ -87,6 +88,7 @@ public class DessertAdapter extends RecyclerView.Adapter<DessertAdapter.ViewHold
             intent.putExtra("telepon", telepon);
             intent.putExtra("daerah", daerah);
             intent.putExtra("buka", buka);
+            intent.putExtra("lokasi", lokasi);
 
 
             intent.putExtra("photo", photoUrl);

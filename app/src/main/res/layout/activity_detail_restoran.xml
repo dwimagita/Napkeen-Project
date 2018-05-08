@@ -18,22 +18,22 @@
             android:background="#FF9052"
 
             />
+
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            tools:context="mobivision.kajiapps.DetailActivity"
             android:layout_below="@id/Detaillokasi"
 
             />
+
         <RelativeLayout
             android:id="@+id/relative"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_below="@id/toolbar_detail"
-            android:background="#99FFEAC6"
-            >
+            android:background="#99FFEAC6">
 
             <ImageView
                 android:id="@+id/detailphoto"
@@ -46,7 +46,7 @@
                 android:id="@+id/starrating"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_alignEnd="@+id/detailphoto"
+                android:layout_alignRight="@+id/detailphoto"
                 android:layout_alignTop="@+id/detailphoto"
                 android:src="@drawable/ic_starrating" />
 
@@ -58,8 +58,6 @@
                 android:layout_toLeftOf="@+id/starrating"
                 android:text="3.2" />
         </RelativeLayout>
-
-
 
 
         <TextView
@@ -133,18 +131,24 @@
             android:id="@+id/Detaillokasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/konten"
-            android:layout_alignStart="@+id/konten"
+
             android:layout_below="@+id/DetailratingBar"
             android:layout_marginTop="19dp"
             android:text="Lokasi" />
 
         <TextView
+            android:id="@+id/lokasistring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/map"
+            android:text="lokasi string" />
+
+        <TextView
             android:id="@+id/telepon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/map"
-            android:layout_below="@+id/map"
+            android:layout_alignLeft="@+id/map"
+            android:layout_below="@+id/lokasistring"
             android:layout_marginTop="19dp"
             android:text="Telepon" />
 
@@ -162,10 +166,10 @@
             android:id="@+id/harga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@id/map"
             android:layout_below="@+id/noTelepon"
             android:layout_marginTop="19dp"
-            android:text="Harga" />
+            android:text="Harga"
+            android:layout_alignLeft="@id/map" />
 
         <TextView
             android:id="@+id/detailharga"
@@ -216,10 +220,10 @@
 
         <EditText
             android:id="@+id/detailComment"
-
             android:layout_width="wrap_content"
             android:layout_height="47dp"
             android:layout_below="@id/DetailAlamatRestoran"
+            android:layout_marginTop="15dp"
 
             android:layout_toLeftOf="@+id/buttonPostComment"
             android:ems="15"
@@ -230,8 +234,8 @@
             android:id="@+id/buttonPostComment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
 
+            android:layout_alignParentRight="true"
             android:layout_alignTop="@+id/detailComment"
             android:text="Post" />
 

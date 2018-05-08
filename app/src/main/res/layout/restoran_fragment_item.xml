@@ -60,7 +60,8 @@
             app:layout_constraintEnd_toEndOf="@+id/RestoranPhoto"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/RestoranPhoto"
-            app:layout_constraintTop_toBottomOf="@+id/RestoranPhoto" />
+            app:layout_constraintTop_toBottomOf="@+id/RestoranPhoto"
+            android:layout_marginRight="8dp" />
 
         <TextView
             android:id="@+id/RestoranPhotoLoc"

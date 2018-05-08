@@ -76,7 +76,8 @@
                 android:fontFamily="casual"
                 android:text="Nama Restoran"
                 tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="5dp" />
+                tools:layout_editor_absoluteY="5dp"
+                tools:ignore="NotSibling" />
 
             <TextView
                 android:id="@+id/textViewkotarestoran"

@@ -80,6 +80,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
             detailinformasi.setText(getIntent().getStringExtra("informasi"));
             detailharga.setText(getIntent().getStringExtra("harga"));
             detaildaerah.setText(getIntent().getStringExtra("daerah"));
+            detailmaps.setText(getIntent().getStringExtra("lokasi"));
             postId = getIntent().getStringExtra("id");
 
             Picasso.get().load(getIntent().getStringExtra("photo")).into(detailPhoto);
@@ -112,7 +113,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         detailbuka = findViewById(R.id.DetailWaktubuka);
         detaildaerah = findViewById(R.id.DetailDaerahRestoran);
         detailtelepon = findViewById(R.id.noTelepon);
-
+        detailmaps = findViewById(R.id.lokasistring);
         detailComment = findViewById(R.id.detailComment);
         buttonComment = findViewById(R.id.buttonPostComment);
         recyclerComment = findViewById(R.id.recyclerComment);
@@ -178,12 +179,13 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
             return null;
         }
     }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-6.9078961, 107.6275705);
-        mMap.addMarker(new MarkerOptions().position(sydney).title(""));
+        mMap.addMarker(new MarkerOptions().position(sydney).title(String.valueOf(detailmaps)));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 45));
     }
 
