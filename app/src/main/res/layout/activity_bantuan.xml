@@ -132,15 +132,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:drawableStart="@drawable/ic_phone"
-                    android:text="  : 085237814671" />
+                    android:text="  : 085237814671"
+                    android:drawableLeft="@drawable/ic_phone" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:drawableStart="@drawable/ic_email"
-                    android:text="  : napkeen.co@gmail.com" />
+                    android:text="  : napkeen.co@gmail.com"
+                    android:drawableLeft="@drawable/ic_email" />
 
             </LinearLayout>
         </LinearLayout>

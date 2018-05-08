@@ -71,6 +71,7 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.ViewHolder> {
             String daerah = post.getPhotoDaerah();
             String buka = post.getPhotoBuka();
 
+            String lokasi = post.getPhotoLokasi();
 
             String photoUrl = post.getPhoto();
             String userpost = post.getUsername();
@@ -85,6 +86,7 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.ViewHolder> {
             intent.putExtra("telepon", telepon);
             intent.putExtra("daerah", daerah);
             intent.putExtra("buka", buka);
+            intent.putExtra("lokasi", lokasi);
 
 
             intent.putExtra("photo", photoUrl);

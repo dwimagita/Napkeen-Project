@@ -36,6 +36,6 @@
         android:id="@+id/btn_ganti_nama"
         android:onClick="gantinama"
         android:layout_gravity="center"
-        />
+        tools:ignore="OnClick" />
     </LinearLayout>
 </LinearLayout>

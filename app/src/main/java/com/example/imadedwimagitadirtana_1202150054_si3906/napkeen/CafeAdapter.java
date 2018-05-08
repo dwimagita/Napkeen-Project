@@ -70,6 +70,7 @@ public class CafeAdapter extends RecyclerView.Adapter<CafeAdapter.ViewHolder> {
             String informasi = post.getPhotoInformasi();
             String daerah = post.getPhotoDaerah();
             String buka = post.getPhotoBuka();
+            String lokasi = post.getPhotoLokasi();
 
 
             String photoUrl = post.getPhoto();
@@ -77,7 +78,7 @@ public class CafeAdapter extends RecyclerView.Adapter<CafeAdapter.ViewHolder> {
             //untuk memberikan intent ke aktivitas lain
 
             Intent intent = new Intent(context, DetailActivity.class);
-            intent.putExtra("userpost",userpost);
+            intent.putExtra("userpost", userpost);
             intent.putExtra("title", title);
             intent.putExtra("alamat", alamat);
             intent.putExtra("harga", harga);
@@ -85,7 +86,7 @@ public class CafeAdapter extends RecyclerView.Adapter<CafeAdapter.ViewHolder> {
             intent.putExtra("telepon", telepon);
             intent.putExtra("daerah", daerah);
             intent.putExtra("buka", buka);
-
+            intent.putExtra("lokasi", lokasi);
 
             intent.putExtra("photo", photoUrl);
             intent.putExtra("id", postId);

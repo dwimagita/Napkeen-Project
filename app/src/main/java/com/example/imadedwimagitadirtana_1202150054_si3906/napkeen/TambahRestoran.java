@@ -53,7 +53,7 @@ public class TambahRestoran extends AppCompatActivity {
     String userEmail;
 
     // yang bakal dikirim
-    String username, title, alamat, telepon, informasi, daerah, buka, harga, jenis;
+    String username, title, alamat, telepon, informasi, daerah, buka, harga, jenis, lokasi;
     private int PLACE_PICKER_REQUEST = 1;
 
     private Button btPlacesAPI;
@@ -143,7 +143,7 @@ public class TambahRestoran extends AppCompatActivity {
             progressDialog.setTitle("Upload Post");
             progressDialog.show();
 
-            final String lokasi = tvPlaceAPI.getText().toString().trim();
+            lokasi = tvPlaceAPI.getText().toString().trim();
 
             title = postTitle.getText().toString();
             alamat = postAlamat.getText().toString();

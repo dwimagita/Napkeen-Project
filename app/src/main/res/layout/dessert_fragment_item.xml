@@ -34,7 +34,7 @@
             android:src="@drawable/ic_starrating"
             android:background="#058b32"
 
-            />
+            android:layout_alignRight="@+id/DessertPhoto" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -62,7 +62,8 @@
             app:layout_constraintEnd_toEndOf="@+id/DessertPhoto"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/DessertPhoto"
-            app:layout_constraintTop_toBottomOf="@+id/DessertPhoto" />
+            app:layout_constraintTop_toBottomOf="@+id/DessertPhoto"
+            android:layout_marginRight="8dp" />
 
         <TextView
             android:id="@+id/DessertPhotoLoc"

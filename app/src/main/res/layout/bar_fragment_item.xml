@@ -34,7 +34,7 @@
             android:src="@drawable/ic_starrating"
             android:background="#058b32"
 
-            />
+            android:layout_alignRight="@+id/BarPhoto" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -61,7 +61,8 @@
             app:layout_constraintEnd_toEndOf="@+id/BarPhoto"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/BarPhoto"
-            app:layout_constraintTop_toBottomOf="@+id/BarPhoto" />
+            app:layout_constraintTop_toBottomOf="@+id/BarPhoto"
+            android:layout_marginRight="8dp" />
 
         <TextView
             android:id="@+id/BarPhotoLoc"
